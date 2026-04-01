@@ -53,7 +53,7 @@ alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=always'
 alias rg='command rg --color=always'
 
-export PS1='\[\033[1;34m\]┌──(\[\033[1;31m\]\u㉿\h\[\033[1;34m\])-[\[\033[0m\]\w\[\033[1;34m\]]\n\[\033[1;34m\]└──\[\033[1;31m\]\$\[\033[0m\] '
+export PS1='\[\033[0m\]\n\[\033[1;34m\]┌──(\[\033[1;31m\]\u㉿\h\[\033[1;34m\])-[\[\033[0m\]\w\[\033[1;34m\]]\n\[\033[1;34m\]└──\[\033[1;31m\]\$\[\033[0m\] '
 __INJECT__
 
 # Copyright (c) 2026 Zeronetsec
