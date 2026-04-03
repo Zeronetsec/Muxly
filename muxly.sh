@@ -33,6 +33,7 @@ require=(
     "utils/color"
     "utils/setconf"
     "utils/getconf"
+    "utils/birthday"
     "utils/cursor/chcursor"
     "utils/cursor/chcursor_blink_rate"
     "utils/cursor/reset_cursor"

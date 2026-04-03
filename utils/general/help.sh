@@ -1,6 +1,8 @@
 # Muxly Project
 
 function __help__() {
+    __birthday__
+
     echo -e "${N}Font commands:"
     echo -e "    ${WW}muxly ${GG}--chfont ${DG}<${CC}font${DG}> - ${YY}change fonts${N}"
     echo -e "    ${WW}muxly ${GG}--list-fonts ${DG}- ${YY}show available fonts${N}"
