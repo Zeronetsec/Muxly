@@ -33,11 +33,6 @@ Muxly modifies important Termux files such as **'~/.termux/*'** and **'/data/dat
 If you are not comfortable with potential risks, please back up your data first. <br>
 Use this tool at your own risk.
 
-## Powered by
-- [Termux](https://f-droid.org/id/packages/com.termux/)
-- [Termux Styling](https://f-droid.org/id/packages/com.termux.styling/)
-- [PRoot Distro](https://github.com/termux/proot-distro)
-
 ## Installation
 ```bash
 git clone https://github.com/Zeronetsec/Muxly.git
@@ -59,18 +54,6 @@ muxly --shortcut-create-session <value>
 muxly --disable-session-toast <true|false>
 muxly --install-rootfs <distro>
 muxly --volume-keys <value>
-```
-
-## Example
-```bash
-muxly --chfont source_code_pro
-muxly --chtheme tokyonight_dark
-muxly --chcursor underline
-muxly --fullscreen true
-muxly --shortcut-create-session 'ctrl + `'
-muxly --disable-session-toast true
-muxly --install-rootfs kali_rolling
-muxly --volume-keys volume
 ```
 And more commands.
 
