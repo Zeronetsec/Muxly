@@ -57,6 +57,10 @@ muxly --volume-keys <value>
 ```
 And more commands.
 
+## Credits
+- [Termux Styling](https://f-droid.org/id/packages/com.termux.styling/)
+- [PRoot Distro](https://github.com/termux/proot-distro)
+
 ## License
 This project is licensed under the MIT License. <br>
 
