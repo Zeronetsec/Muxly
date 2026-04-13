@@ -2,6 +2,7 @@
 
 function __help__() {
     __birthday__
+    echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
 
     echo -e "${N}Font commands:"
     echo -e "    ${WW}muxly ${GG}--chfont ${DG}<${CC}font${DG}> - ${YY}change fonts${N}"
