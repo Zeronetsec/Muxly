@@ -105,16 +105,16 @@ if [[ "$backup" == "true" ]]; then
     fi
 fi
 
-if [[ -d "$base/muxly" ]]; then
-    if [[ -f "$base/muxly/config/config.conf" ]]; then
-        install \
-            "command cat ${base}/muxly/config/config.conf > ${path}/config/config.conf" \
-            "Sync: ${GG}${base}/muxly/config/config.conf ${DG}=> ${GG}${path}/config/config.conf${N}"
-    fi
-
+if [[ ! -d "${HOME}/.config/muxly" ]]; then
     install \
-        "command rm -rf ${base}/muxly" \
-        "Removing: ${GG}old muxly${N}"
+        "command mkdir -p ${HOME}/.config/muxly" \
+        "Create directory: ${GG}${HOME}/.config/muxly${N}"
+fi
+
+if [[ ! -f "${HOME}/.config/muxly" ]]; then
+    install \
+        "command cp -f ${path}/config/config.conf ${HOME}/.config/muxly/config.conf" \
+        "Copying: ${GG}${path}/config/config.conf ${DG}=> ${GG}${HOME}/.config/muxly/config.conf${N}"
 fi
 
 install \

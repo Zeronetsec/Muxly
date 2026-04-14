@@ -20,7 +20,7 @@ dir="$(
 )"
 
 export muxlyroot="${dir}"
-export config="${muxlyroot}/config/config.conf"
+export config="${HOME}/.config/muxly/config.conf"
 export proppath="${HOME}/.termux/termux.properties"
 export rfspath="${PREFIX}/var/lib/proot-distro/installed-rootfs"
 export cfgtmp="${PREFIX}/tmp/muxly_config_temporary.tmp"
