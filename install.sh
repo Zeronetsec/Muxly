@@ -111,11 +111,15 @@ if [[ ! -d "${HOME}/.config/muxly" ]]; then
         "Create directory: ${GG}${HOME}/.config/muxly${N}"
 fi
 
-if [[ ! -f "${HOME}/.config/muxly" ]]; then
+if [[ ! -f "${HOME}/.config/muxly/config.conf" ]]; then
     install \
-        "command cp -f ${path}/config/config.conf ${HOME}/.config/muxly/config.conf" \
+        "command cp ${path}/config/config.conf ${HOME}/.config/muxly/config.conf" \
         "Copying: ${GG}${path}/config/config.conf ${DG}=> ${GG}${HOME}/.config/muxly/config.conf${N}"
 fi
+
+install \
+    "command rm -rf ${base}/muxly" \
+    "Removing: ${GG}old muxly${N}"
 
 install \
     "command mv ${path} ${base}/muxly" \
