@@ -32,6 +32,7 @@ command apt \
     --allow-downgrades -y
 
 command cat > "${HOME}/.bashrc" << '__INJECT__'
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/system/bin:/system/xbin
 export LANG=C.UTF-8
 export LC_ALL=C.UTF-8
 export LS_OPTIONS='--color=always'
