@@ -3,6 +3,7 @@
 [![version](https://img.shields.io/badge/Muxly-Version%201.0-blue.svg?maxAge=259200)]()
 [![os](https://img.shields.io/badge/Supported%20OS-Termux-blue.svg)]()
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![views](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2FZeronetsec%2FMuxly.json&&label=Views&color=blue)](https://github.com/Zeronetsec/Muxly)
 
 # Muxly
 Muxly is a Swiss Army knife for Termux customization. <br>
