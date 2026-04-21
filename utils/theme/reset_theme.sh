@@ -1,7 +1,7 @@
 # Muxly Project
 
 function __reset_theme__() {
-    if [[ ! -f "$thpath" ]]; then
+    if [[ ! -e "$thpath" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${thpath} ${N}not found!"
         return 1
     fi

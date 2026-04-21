@@ -1,11 +1,6 @@
 # Muxly Project
 
 function __chtheme__() {
-    if [[ -f "$thpath" ]]; then
-        command unlink "$thpath" 2>/dev/null || \
-            command rm -f "$thpath" 2>/dev/null
-    fi
-
     if [[ -z "$1" ]]; then
         echo -e "${R}[!] ${N}Missing arguments!"
         echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
@@ -15,6 +10,11 @@ function __chtheme__() {
     if [[ ! -f "$muxlyroot/theme/$1" ]]; then
         echo -e "${R}[!] ${N}Invalid theme style: ${GG}${1}${N}"
         return 1
+    fi
+
+    if [[ -e "$thpath" ]]; then
+        command unlink "$thpath" 2>/dev/null || \
+            command rm -rf "$thpath" 2>/dev/null
     fi
 
     command ln -sf \
