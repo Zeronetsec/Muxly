@@ -17,9 +17,11 @@ It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 - And more
 
 ## Disclaimer
-Muxly modifies important Termux files such as **'~/.termux/*'** and **'/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/*'**. <br>
-If you are not comfortable with potential risks, please back up your data first. <br>
-Use this tool at your own risk.
+Please read the
+[DISCLAIMER](https://github.com/Zeronetsec/Muxly/blob/main/DISCLAIMER.md)
+before used. <br>
+Use at your own risk. <br>
+This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/*`.
 
 ## Installation
 ```bash
