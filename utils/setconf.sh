@@ -1,8 +1,8 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __setconf__() {
-    [[ -z "$1" ]] && return 1
-    [[ -z "$2" ]] && return 1
+    [[ -z "${1}" ]] && return 1
+    [[ -z "${2}" ]] && return 1
 
     command cat "${config}" | \
         command grep -v "^${1} =" \

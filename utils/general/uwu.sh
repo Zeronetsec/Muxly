@@ -1,4 +1,4 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __uwu__() {
     local faces=(
@@ -18,8 +18,8 @@ function __uwu__() {
     while (( SECONDS < duration )); do
         for face in "${faces[@]}"; do
             (( SECONDS >= duration )) && break
-            printf "\r%s\033[K" "$face"
-            command sleep "$delay"
+            printf "\r%s\033[K" "${face}"
+            command sleep "${delay}"
         done
     done
 

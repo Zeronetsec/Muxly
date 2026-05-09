@@ -1,7 +1,7 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __reset_cursor__() {
-    if [[ ! -f "$proppath" ]]; then
+    if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi

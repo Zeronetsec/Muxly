@@ -1,9 +1,9 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __list_fonts__() {
-    local folder="$muxlyroot/font"
+    local folder="${muxlyroot}/font"
 
-    if [[ ! -d "$folder" ]]; then
+    if [[ ! -d "${folder}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${folder} ${N}not found!"
         return 1
     fi

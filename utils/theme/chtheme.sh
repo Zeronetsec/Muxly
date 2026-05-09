@@ -1,20 +1,20 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __chtheme__() {
-    if [[ -z "$1" ]]; then
+    if [[ -z "${1}" ]]; then
         echo -e "${R}[!] ${N}Missing arguments!"
         echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
         return 1
     fi
 
-    if [[ ! -f "$muxlyroot/theme/$1" ]]; then
+    if [[ ! -f "${muxlyroot}/theme/${1}" ]]; then
         echo -e "${R}[!] ${N}Invalid theme style: ${GG}${1}${N}"
         return 1
     fi
 
-    if [[ -e "$thpath" ]]; then
-        command unlink "$thpath" 2>/dev/null || \
-            command rm -rf "$thpath" 2>/dev/null
+    if [[ -e "${thpath}" ]]; then
+        command unlink "${thpath}" 2>/dev/null || \
+            command rm -rf "${thpath}" 2>/dev/null
     fi
 
     command ln -sf \

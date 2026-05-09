@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 src="${BASH_SOURCE[0]}"
-while [[ -h "$src" ]]; do
+while [[ -h "${src}" ]]; do
     dir="$(
         cd -P "$(
-            command dirname "$src"
+            command dirname "${src}"
         )" >/dev/null 2>&1 && pwd
     )"
 
-    src="$(command readlink "$src")"
-    [[ "$src" != /* ]] && src="$dir/$src"
+    src="$(command readlink "${src}")"
+    [[ "${src}" != /* ]] && src="${dir}/${src}"
 done
 
 dir="$(
     cd -P "$(
-        command dirname "$src"
+        command dirname "${src}"
     )" >/dev/null 2>&1 && pwd
 )"
 
@@ -51,6 +51,8 @@ require=(
     "utils/rootfs/rootfs"
     "utils/rootfs/remove_rootfs"
     "utils/rootfs/reset_rootfs"
+    "utils/rootfs/rootfs_command"
+    "utils/rootfs/symlink"
     "utils/screen/fullscreen"
     "utils/screen/transcript_rows"
     "utils/screen/disable_session_toast"
@@ -193,6 +195,14 @@ case "${input}" in
         ;;
     "--reset-rootfs")
         __reset_rootfs__ "${2}"
+        exit $?
+        ;;
+    "--rootfs-command")
+        __rootfs_command__ "${2}" "${3}"
+        exit $?
+        ;;
+    "--symlink")
+        __symlink__ "${2}" "${3}"
         exit $?
         ;;
     "--help")

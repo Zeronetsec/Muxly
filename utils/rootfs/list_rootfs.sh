@@ -1,9 +1,9 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __list_rootfs__() {
-    local rfs="$muxlyroot/rootfs"
+    local rfs="${muxlyroot}/rootfs"
 
-    if [[ ! -d "$rfs" ]]; then
+    if [[ ! -d "${rfs}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${rfs} ${N}not found!"
         return 1
     fi

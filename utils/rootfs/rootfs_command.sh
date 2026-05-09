@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __remove_rootfs__() {
+function __rootfs_command__() {
     if [[ ! -d "${rfspath}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${rfspath} ${N}not found!"
         return 1
@@ -8,7 +8,13 @@ function __remove_rootfs__() {
 
     if [[ -z "${1}" ]]; then
         echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
+        echo -e "${R}[!] ${N}Try: ${GG}Muxly --help${N}"
+        return 1
+    fi
+
+    if [[ -z "${2}" ]]; then
+        echo -e "${R}[!] ${N}Missing arguments!"
+        echo -e "${R}Try: ${GG}muxly --help${N}"
         return 1
     fi
 
@@ -17,8 +23,8 @@ function __remove_rootfs__() {
         return 1
     fi
 
-    command proot-distro remove "${1}"
-    return 0
+    command proot-distro login "${1}" -- "${2}"
+    return $?
 }
 
 # Copyright (c) 2026 Zeronetsec

@@ -1,4 +1,4 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __info__() {
     local terminal_cursor_style="$(__getconf__ "terminal-cursor-style")"

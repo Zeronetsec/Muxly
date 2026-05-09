@@ -1,7 +1,7 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __list_installed_rootfs__() {
-    if [[ ! -d "$rfspath" ]]; then
+    if [[ ! -d "${rfspath}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${rfspath} ${N}not found!"
         return 1
     fi

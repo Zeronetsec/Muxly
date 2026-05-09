@@ -1,4 +1,4 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 export N='\033[0m'
 export B='\033[1;34m'

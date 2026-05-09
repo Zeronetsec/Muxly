@@ -1,4 +1,4 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __version__() {
     local tools="Muxly"

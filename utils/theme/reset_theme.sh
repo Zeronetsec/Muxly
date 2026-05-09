@@ -1,7 +1,7 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __reset_theme__() {
-    if [[ ! -e "$thpath" ]]; then
+    if [[ ! -e "${thpath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${thpath} ${N}not found!"
         return 1
     fi

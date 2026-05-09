@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 command apt update -y
 export DEBIAN_FRONTEND=noninteractive

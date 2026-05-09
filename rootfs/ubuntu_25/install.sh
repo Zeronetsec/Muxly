@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 distro="ubuntu_25"
 base="ubuntu"
 
-if [[ -d "$rfspath/$base" ]]; then
+if [[ -d "${rfspath}/${base}" ]]; then
     command proot-distro remove "${base}"
 fi
 
 command proot-distro install "${base}"
 command proot-distro rename "${base}" "${distro}"
 
-if [[ -f "$rfspath/$distro/rootfs.sh" ]]; then
+if [[ -f "${rfspath}/${distro}/rootfs.sh" ]]; then
     command rm -fv "${rfspath}/${distro}/rootfs.sh"
 fi
 

@@ -1,12 +1,12 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __shortcut_previous_session__() {
-    if [[ ! -f "$proppath" ]]; then
+    if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
-    if [[ -z "$1" ]]; then
+    if [[ -z "${1}" ]]; then
         echo -e "${R}[!] ${N}Missing arguments!"
         echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
         return 1

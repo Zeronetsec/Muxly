@@ -1,4 +1,4 @@
-<!-- Muxly Project -->
+<!-- https://github.com/Zeronetsec/Muxly -->
 
 [![version](https://img.shields.io/badge/Muxly-Version%201.0-blue.svg?maxAge=259200)]()
 [![os](https://img.shields.io/badge/Supported%20OS-Termux-blue.svg)]()

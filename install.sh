@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 N='\033[0m'
 R='\033[1;31m'
@@ -7,8 +7,8 @@ B='\033[1;34m'
 GG='\033[0;32m'
 DG='\033[1;90m'
 
-base="$PREFIX/opt"
-symlink="$PREFIX/bin"
+base="${PREFIX}/opt"
+symlink="${PREFIX}/bin"
 bkdate="$(command date +%Y_%b_%d_%H_%M_%S)"
 
 path="$(
@@ -17,20 +17,20 @@ path="$(
     )" &> /dev/null && pwd
 )"
 
-if [[ "$1" == "--backup" ]]; then
+if [[ "${1}" == "--backup" ]]; then
     backup="true"
 fi
 
 function install() {
-    local cmd="$1"
-    local desc="$2"
+    local cmd="${1}"
+    local desc="${2}"
     echo -e "\n${B}[*] ${N}${desc}"
     eval "${cmd}" >/dev/null
     local status=$?
     echo -e "    ${DG}└── ${N}exit: ${GG}${status}${N}"
 }
 
-if [[ ! -d "$path" ]]; then
+if [[ ! -d "${path}" ]]; then
     echo -e "\n${R}[!] ${N}Folder: ${GG}${path} ${N}not found! \n"
     exit 1
 fi
@@ -50,48 +50,48 @@ for i in "${pack[@]}"; do
         "Installing: ${GG}${i}${N}" 2>/dev/null
 done
 
-if [[ ! -d "$base" ]]; then
+if [[ ! -d "${base}" ]]; then
     install \
         "command mkdir -p ${base}" \
         "Create directory: ${GG}${base}${N}"
 fi
 
 
-if [[ "$backup" == "true" && -d "$base/muxly" ]]; then
-    cd "$base"
+if [[ "${backup}" == "true" && -d "${base}/muxly" ]]; then
+    cd "${base}"
     install \
         "command zip -r muxly_${bkdate}.bak.zip muxly" \
         "Backup: ${GG}${base}/muxly ${DG}=> ${GG}${base}/muxly_${bkdate}.bak.zip${N}"
     cd
 fi
 
-tprop="$HOME/.termux/termux.properties"
-tfont="$HOME/.termux/font.ttf"
-tth="$HOME/.termux/colors.properties"
-rfs="$PREFIX/var/lib/proot-distro/installed-rootfs"
+tprop="${HOME}/.termux/termux.properties"
+tfont="${HOME}/.termux/font.ttf"
+tth="${HOME}/.termux/colors.properties"
+rfs="${PREFIX}/var/lib/proot-distro/installed-rootfs"
 
-if [[ "$backup" == "true" ]]; then
-    if [[ -f "$tprop" || -L "$tprop" ]]; then
+if [[ "${backup}" == "true" ]]; then
+    if [[ -f "${tprop}" || -L "${tprop}" ]]; then
         install \
             "command cp ${tprop} ${tprop}_${bkdate}.bak" \
             "Backup: ${GG}${tprop} ${DG}=> ${GG}${tprop}_${bkdate}.bak${N}"
     fi
 
-    if [[ -f "$tfont" || -L "$tfont" ]]; then
+    if [[ -f "${tfont}" || -L "${tfont}" ]]; then
         install \
             "command cp ${tfont} ${tfont}_${bkdate}.bak" \
             "Backup: ${GG}${tfont} ${DG}=> ${GG}${tfont}_${bkdate}.bak${N}"
     fi
 
-    if [[ -f "$tth" || -L "$tth" ]]; then
+    if [[ -f "${tth}" || -L "${tth}" ]]; then
         install \
             "command cp ${tth} ${tth}_${bkdate}.bak" \
             "Backup: ${GG}${tth} ${DG}=> ${GG}${tth}_${bkdate}.bak${N}"
     fi
 
-    if [[ -d "$rfs" ]]; then
+    if [[ -d "${rfs}" ]]; then
         shopt -s nullglob
-        bk=("$rfs"/*)
+        bk=("${rfs}"/*)
         shopt -u nullglob
 
         if [[ "${#bk[@]}" -gt 0 ]]; then

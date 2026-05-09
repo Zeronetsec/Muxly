@@ -1,9 +1,9 @@
-# Muxly Project
+# https://github.com/Zeronetsec/Muxly
 
 function __list_themes__() {
-    local th="$muxlyroot/theme"
+    local th="${muxlyroot}/theme"
 
-    if [[ ! -d "$th" ]]; then
+    if [[ ! -d "${th}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${th} ${N}not found!"
         return 1
     fi
