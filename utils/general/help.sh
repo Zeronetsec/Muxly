@@ -47,8 +47,8 @@ function __help__() {
     echo -e "    ${WW}muxly ${GG}--list-installed-rootfs ${DG}- ${YY}show installed rootfs${N}"
     echo -e "    ${WW}muxly ${GG}--remove-rootfs ${DG}<${CC}distro${DG}> - ${YY}remove an installed root filesystem${N}"
     echo -e "    ${WW}muxly ${GG}--reset-rootfs ${DG}<${CC}distro${DG}> - ${YY}reset a root filesystem${N}"
-    echo -e "    ${WW}muxly ${GG}--rootfs-command ${DG}<${CC}distro${DG}> <${CC}command${DG}> - ${YY}nanti${N}"
-    echo -e "    ${WW}muxly ${GG}--symlink ${DG}<${CC}distro${DG}> <${CC}command${DG}> - ${YY}nanti${N}"
+    echo -e "    ${WW}muxly ${GG}--rootfs-command ${DG}<${CC}distro${DG}> <${CC}command${DG}> - ${YY}execute a command inside a specific rootfs${N}"
+    echo -e "    ${WW}muxly ${GG}--symlink ${DG}<${CC}distro${DG}> <${CC}command${DG}> - ${YY}create a host symlink for a rootfs command${N}"
 
     printf '\n'
     echo -e "${N}Input commands:"
