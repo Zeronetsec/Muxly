@@ -1,0 +1,5 @@
+{
+	"Command": "--list-installed-rootfs",
+	"Args": "",
+	"Description": "show installed rootfs"
+}

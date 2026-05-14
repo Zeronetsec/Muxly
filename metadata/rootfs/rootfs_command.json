@@ -1,0 +1,5 @@
+{
+	"Command": "--rootfs-command",
+	"Args": "<distro> <command>",
+	"Description": "execute a command inside a specific rootfs"
+}

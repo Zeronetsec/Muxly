@@ -1,0 +1,5 @@
+{
+	"Command": "--reset-cursor-blink-rate",
+	"Args": "",
+	"Description": "reset cursor blink rate"
+}

@@ -1,0 +1,5 @@
+{
+	"Command": "--list-themes",
+	"Args": "",
+	"Description": "show available themes"
+}

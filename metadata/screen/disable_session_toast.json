@@ -1,0 +1,5 @@
+{
+	"Command": "--disable-session-toast",
+	"Args": "<true|false>",
+	"Description": "disable session notifications"
+}

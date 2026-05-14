@@ -1,0 +1,5 @@
+{
+	"Command": "--chtheme",
+	"Args": "<theme>",
+	"Description": "change theme"
+}

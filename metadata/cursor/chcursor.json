@@ -1,0 +1,5 @@
+{
+	"Command": "--chcursor",
+	"Args": "<block|bar|underline>",
+	"Description": "change cursor style"
+}

@@ -1,0 +1,5 @@
+{
+	"Command": "--fullscreen-workaround",
+	"Args": "<true|false>",
+	"Description": "enable fullscreen fix"
+}

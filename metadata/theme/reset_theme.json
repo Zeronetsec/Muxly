@@ -1,0 +1,5 @@
+{
+	"Command": "--reset-theme",
+	"Args": "",
+	"Description": "reset theme to default"
+}

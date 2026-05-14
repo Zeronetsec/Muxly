@@ -1,0 +1,5 @@
+{
+	"Command": "--install-rootfs",
+	"Args": "<distro>",
+	"Description": "install a root filesystem"
+}

@@ -1,0 +1,5 @@
+{
+	"Command": "--fullscreen",
+	"Args": "<true|false>",
+	"Description": "toggle fullscreen"
+}

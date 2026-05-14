@@ -1,0 +1,5 @@
+{
+	"Command": "--list-fonts",
+	"Args": "",
+	"Description": "show available fonts"
+}
