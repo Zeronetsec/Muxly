@@ -42,6 +42,7 @@ pack=(
     "coreutils"
     "gawk"
     "grep"
+    "jq"
 )
 
 for i in "${pack[@]}"; do
