@@ -3,7 +3,7 @@
 function __help__() {
     __birthday__
 
-    echo -e "${N}Usage: ${GG}${tname} ${CC}<command> [<args>]${N}"
+    echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
 
     printf '\n'
     echo -e "${N}Font commands:"
