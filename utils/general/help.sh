@@ -3,6 +3,7 @@
 function __help__() {
     local metadata="${muxlyroot}/metadata"
 
+    __birthday__
     echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
     printf '\n'
 
