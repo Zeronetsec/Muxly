@@ -31,9 +31,11 @@ function install() {
 }
 
 if [[ ! -d "${path}" ]]; then
-    echo -e "\n${R}[!] ${N}Folder: ${GG}${path} ${N}not found! \n"
+    echo -e "${R}[!] ${N}Folder: ${GG}${path} ${N}not found! \n"
     exit 1
 fi
+
+echo -e "${B}[*] ${N}Installing: ${GG}Muxly${N}"
 
 pack=(
     "bash"
@@ -138,11 +140,9 @@ printf '\n'
 if command -v muxly &>/dev/null; then
     echo -e "${GG}[+] ${N}Muxly installed!"
     echo -e "${GG}[+] ${N}Usage: ${GG}muxly --help ${N}to show helper"
-    printf '\n'
     exit 0
 else
     echo -e "${R}[!] ${N}Failed installing muxly!"
-    printf '\n'
     exit 1
 fi
 

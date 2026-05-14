@@ -1,7 +1,7 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
-[![version](https://img.shields.io/badge/Muxly-Version%201.0-blue.svg?maxAge=259200)]()
-[![os](https://img.shields.io/badge/Supported%20OS-Termux-blue.svg)]()
+[![version](https://img.shields.io/badge/Muxly-Version%200.1-blue.svg?maxAge=259200)]()
+[![os](https://img.shields.io/badge/Supported%20OS-Android-blue.svg)]()
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 # Muxly
@@ -49,7 +49,6 @@ And more commands.
 
 ## Credits
 - [Termux Styling](https://f-droid.org/id/packages/com.termux.styling/)
-- [PRoot Distro](https://github.com/termux/proot-distro)
 
 ## License
 This project is licensed under the MIT License. <br>

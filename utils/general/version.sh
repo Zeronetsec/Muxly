@@ -2,7 +2,7 @@
 
 function __version__() {
     local tools="Muxly"
-    local version="v1.0"
+    local version="v0.1"
     local creator="Zeronetsec"
     local homepage="https://github.com/Zeronetsec/Muxly"
 
