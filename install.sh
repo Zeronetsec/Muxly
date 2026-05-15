@@ -9,7 +9,7 @@ DG='\033[1;90m'
 
 base="${PREFIX}/opt"
 symlink="${PREFIX}/bin"
-bkdate="$(command date +%Y_%b_%d_%H_%M_%S)"
+bkdate="$(command date '+%Y_%b_%d_%H_%M_%S')"
 
 path="$(
     cd -- "$(
@@ -28,6 +28,22 @@ function install() {
     eval "${cmd}" >/dev/null
     local status=$?
     echo -e "    ${DG}└── ${N}exit: ${GG}${status}${N}"
+}
+
+function android_check() {
+    [[ -x '/system/bin/getprop' ]] && return 0
+    [[ -f '/system/bin/linker' || -f '/system/bin/linker64' ]] && return 0
+    [[ -d '/dev/cpuctl' ]] && return 0
+    [[ -d '/storage/emulated/0/Android' ]] && return 0
+    [[ -d '/data/data/com.termux/' ]] && return 0
+    [[ -n "${PREFIX}" && -n "${TERMUX_VERSION}" ]] && return 0
+    return 1
+}
+
+android_check || {
+    echo -e "${R}[!] ${N}Termux environment not detected."
+    echo -e "${R}[!] ${N}This tool is designed exclusively for the Termux Android app."
+    exit 1
 }
 
 if [[ ! -d "${path}" ]]; then
