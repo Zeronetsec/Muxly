@@ -1,38 +1,25 @@
 # https://github.com/Zeronetsec/Muxly
 
 function __help__() {
-    local metadata="${muxlyroot}/metadata"
+    export metadata="${muxlyroot}/metadata"
+    local engine="${muxlyroot}/utils/json_parser.py"
 
-    __birthday__
-    echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
-    printf '\n'
+    if [[ -f "${engine}" ]]; then
+        __birthday__
 
-    idx=0
-    shopt -s nullglob
+        echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
+        printf '\n'
 
-    for dir in "${metadata}/"*/; do
-        [[ "${idx}" -ne 0 ]] && printf '\n'
+        [[ ! -x "${engine}" ]] && {
+            command chmod +x "${engine}"
+        }
 
-        section="$(command basename "${dir}")"
-        echo -e "${N}${section^} commands:"
-
-        for file in "${dir}"/*.json; do
-            command="$(command jq -r '.Command' "${file}")"
-            args="$(command jq -r '.Args' "${file}")"
-            desc="$(command jq -r '.Description' "${file}")"
-
-            if [[ -n "${args}" ]]; then
-                fullcmd="${GG}${command} ${CC}${args}${N}"
-            else
-                fullcmd="${GG}${command}${N}"
-            fi
-
-            echo -e "    ${R}› ${fullcmd} ${DG}- ${WW}${desc}${N}"
-        done
-        ((idx++))
-    done
-
-    shopt -u nullglob
+        command python3 "${engine}"
+        return $?
+    else
+        echo -e "${R}[!] ${N}Engine: ${GG}${engine} ${N}not found!"
+        return 1
+    fi
 }
 
 # Copyright (c) 2026 Zeronetsec

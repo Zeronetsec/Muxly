@@ -60,7 +60,7 @@ pack=(
     "coreutils"
     "gawk"
     "grep"
-    "jq"
+    "python3"
 )
 
 for i in "${pack[@]}"; do
