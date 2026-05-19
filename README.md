@@ -14,7 +14,7 @@ It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 - Root filesystem (Linux distro) management
 - Simple and intuitive CLI experience
 - Real-time configuration updates
-- And more
+- And more.
 
 ## Disclaimer
 This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/*`. <br>
@@ -28,10 +28,7 @@ Use at your own risk.
 git clone https://github.com/Zeronetsec/Muxly.git
 cd Muxly
 chmod +x install.sh
-./install.sh
-
-# for backup
-./install.sh --backup
+./install.sh # --backup
 ```
 
 ## Usage
@@ -48,9 +45,12 @@ muxly --volume-keys <value>
 And more commands.
 
 ## Credits
-- [Termux Styling](https://f-droid.org/id/packages/com.termux.styling/)
+This project incorporates components from third-party sources. <br>
+Please refer to
+[CREDITS](https://github.com/Zeronetsec/Muxly/blob/main/CREDITS.md)
+for full details and licensing information.
 
 ## License
-This project is licensed under the MIT License. <br>
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.
 
 <!-- Copyright (c) 2026 Zeronetsec -->

@@ -7,7 +7,7 @@ function __chtheme__() {
         return 1
     fi
 
-    if [[ ! -f "${muxlyroot}/theme/${1}" ]]; then
+    if [[ ! -f "${muxlyroot}/style/theme/${1}" ]]; then
         echo -e "${R}[!] ${N}Invalid theme style: ${GG}${1}${N}"
         return 1
     fi
@@ -18,7 +18,7 @@ function __chtheme__() {
     fi
 
     command ln -sf \
-        "${muxlyroot}/theme/${1}" \
+        "${muxlyroot}/style/theme/${1}" \
         "${thpath}"
 
     command termux-reload-settings

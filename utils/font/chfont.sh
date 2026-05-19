@@ -12,13 +12,13 @@ function __chfont__() {
         return 1
     fi
 
-    if [[ ! -f "${muxlyroot}/font/${1}.ttf" ]]; then
+    if [[ ! -f "${muxlyroot}/style/font/${1}.ttf" ]]; then
         echo -e "${R}[!] ${N}Invalid font style: ${GG}${1}${N}"
         return 1
     fi
 
     command ln -sf \
-        "${muxlyroot}/font/${1}.ttf" \
+        "${muxlyroot}/style/font/${1}.ttf" \
         "${fontpath}"
 
     command termux-reload-settings
