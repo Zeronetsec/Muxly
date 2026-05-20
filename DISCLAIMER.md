@@ -17,7 +17,7 @@ This tool performs modifications on the following directories:
   - Shortcuts (key bindings)
   - Other configuration settings related to the appearance and usability of Termux
 
-- `/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/*` <br>
+- `/data/data/com.termux/files/usr/var/lib/proot-distro/containers/*` <br>
   Used to:
   - Install custom rootfs
   - Remove installed rootfs

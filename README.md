@@ -17,7 +17,7 @@ It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 - And more.
 
 ## Disclaimer
-This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/*`. <br>
+This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/containers/*`. <br>
 Please read the
 [DISCLAIMER](https://github.com/Zeronetsec/Muxly/blob/main/DISCLAIMER.md)
 before use. <br>
