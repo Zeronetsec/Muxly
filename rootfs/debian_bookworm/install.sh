@@ -3,12 +3,13 @@
 
 distro="debian_bookworm"
 base="debian"
+install="debian:12"
 
 if [[ -d "${rfspath}/${base}" ]]; then
     command proot-distro remove "${base}"
 fi
 
-command proot-distro install "${base}"
+command proot-distro install "${install}"
 command proot-distro rename "${base}" "${distro}"
 
 if [[ -f "${rfspath}/${distro}/rootfs.sh" ]]; then

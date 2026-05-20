@@ -8,20 +8,6 @@ command apt \
     -o Dpkg::Options::="--force-confold" \
     full-upgrade -y
 
-command cat > "/etc/apt/sources.list" << '__INJECT__'
-deb http://deb.debian.org/debian bookworm main contrib non-free
-deb http://security.debian.org/debian-security bookworm-security main contrib non-free
-deb http://deb.debian.org/debian bookworm-updates main contrib non-free
-__INJECT__
-
-command apt update -y
-export DEBIAN_FRONTEND=noninteractive
-command apt \
-    -o Dpkg::Options::="--force-confdef" \
-    -o Dpkg::Options::="--force-confold" \
-    full-upgrade \
-    --allow-downgrades -y
-
 command cat > "${HOME}/.bashrc" << '__INJECT__'
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/system/bin:/system/xbin
 export LANG=C.UTF-8
