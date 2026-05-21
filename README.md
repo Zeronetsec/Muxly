@@ -19,13 +19,13 @@ It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 ## Disclaimer
 This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/containers/*`. <br>
 Please read the
-[DISCLAIMER](https://github.com/Zeronetsec/Muxly/blob/main/DISCLAIMER.md)
+[DISCLAIMER](DISCLAIMER.md)
 before use. <br>
 Use at your own risk.
 
 ## Installation
 ```bash
-git clone https://github.com/Zeronetsec/Muxly.git
+git clone https://github.com/Zeronetsec/Muxly
 cd Muxly
 chmod +x install.sh
 ./install.sh # --backup
@@ -47,7 +47,7 @@ And more commands.
 ## Credits
 This project incorporates components from third-party sources. <br>
 Please refer to
-[CREDITS](https://github.com/Zeronetsec/Muxly/blob/main/CREDITS.md)
+[CREDITS](CREDITS.md)
 for full details and licensing information.
 
 ## License
