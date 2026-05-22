@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __list_rootfs__() {
+function utils::rootfs::ListRootfs() {
     local rfs="${muxlyroot}/rootfs"
 
     if [[ ! -d "${rfs}" ]]; then

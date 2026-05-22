@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __reset_font__() {
+function utils::font::ResetFont() {
     if [[ ! -f "${fontpath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${fontpath} ${N}not found!"
         return 1
@@ -9,7 +9,7 @@ function __reset_font__() {
     command unlink "${fontpath}" 2>/dev/null
     command termux-reload-settings
 
-    __setconf__ "font-style" "default"
+    utils::setconf "font-style" "default"
 
     echo -e "${B}[*] ${N}Resetting font style"
     return 0

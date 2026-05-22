@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __transcript_rows__() {
+function utils::screen::TranscriptRows() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ "${1}" -lt 1 || "${1}" -gt 50000 ]]; then
@@ -31,7 +30,7 @@ function __transcript_rows__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "transcript-rows" "${1}"
+    utils::setconf "transcript-rows" "${1}"
 
     echo -e "${B}[*] ${N}Change transcript rows: ${GG}${1}${N}"
     return 0

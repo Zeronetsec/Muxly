@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __disable_session_toast__() {
+function utils::screen::DisableSessionToast() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ "${1}" != "true" && "${1}" != "false" ]]; then
@@ -30,7 +29,7 @@ function __disable_session_toast__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "session-toast" "${1}"
+    utils::setconf "session-toast" "${1}"
 
     echo -e "${B}[*] ${N}Change session toast: ${GG}${1}${N}"
     return 0

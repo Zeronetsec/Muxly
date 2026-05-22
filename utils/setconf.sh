@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __setconf__() {
+function utils::setconf() {
     [[ -z "${1}" ]] && return 1
     [[ -z "${2}" ]] && return 1
 

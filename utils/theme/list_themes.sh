@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __list_themes__() {
+function utils::theme::ListThemes() {
     local th="${muxlyroot}/style/theme"
 
     if [[ ! -d "${th}" ]]; then

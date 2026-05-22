@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __reset_transcript_rows__() {
+function utils::screen::ResetTranscriptRows() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
@@ -19,7 +19,7 @@ function __reset_transcript_rows__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "transcript-rows" "default"
+    utils::setconf "transcript-rows" "default"
 
     echo -e "${B}[*] ${N}Resetting transcript rows"
     return 0

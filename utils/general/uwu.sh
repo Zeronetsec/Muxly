@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __uwu__() {
+function utils::general::Uwu() {
     local faces=(
         "(｡◕‿◕｡)"
         "(≧◡≦)"

@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __reset_shortcut__() {
+function utils::shortcut::ResetShortcut() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
@@ -19,7 +19,7 @@ function __reset_shortcut__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "shortcut-create-session" "default"
+    utils::setconf "shortcut-create-session" "default"
     echo -e "${B}[*] ${N}Resetting shortcut create session"
 
     command cat "${proppath}" | \
@@ -35,7 +35,7 @@ function __reset_shortcut__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "shortcut-next-session" "default"
+    utils::setconf "shortcut-next-session" "default"
     echo -e "${B}[*] ${N}Resetting shortcut next session"
 
     command cat "${proppath}" | \
@@ -51,7 +51,7 @@ function __reset_shortcut__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "shortcut-previous-session" "default"
+    utils::setconf "shortcut-previous-session" "default"
     echo -e "${B}[*] ${N}Resetting shortcut previous session"
 
     command cat "${proppath}" | \
@@ -67,7 +67,7 @@ function __reset_shortcut__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "shortcut-rename-session" "default"
+    utils::setconf "shortcut-rename-session" "default"
     echo -e "${B}[*] ${N}Resetting shortcut rename session"
     return 0
 }

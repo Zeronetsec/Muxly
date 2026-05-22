@@ -20,209 +20,205 @@ dir="$(
 )"
 
 export muxlyroot="${dir}"
-export config="${HOME}/.config/muxly/config.conf"
-export proppath="${HOME}/.termux/termux.properties"
-export rfspath="${PREFIX}/var/lib/proot-distro/containers"
-export cfgtmp="${PREFIX}/tmp/muxly_config_temporary.tmp"
-export utemp="${PREFIX}/tmp/muxly_utils_temporary.tmp"
-export fontpath="${HOME}/.termux/font.ttf"
-export thpath="${HOME}/.termux/colors.properties"
+source "${muxlyroot}/utils/include.sh"
+
+include : '(
+    utils/variable
+    utils/color
+    utils/varlock
+    utils/setconf
+    utils/getconf
+    utils/birthday
+    utils/invalid_input
+    utils/missing_arguments
+    utils/unknown_command
+    utils/cursor/chcursor
+    utils/cursor/chcursor_blink_rate
+    utils/cursor/reset_cursor
+    utils/cursor/reset_cursor_blink_rate
+    utils/font/chfont
+    utils/font/list_fonts
+    utils/font/reset_font
+    utils/general/help
+    utils/general/info
+    utils/general/uwu
+    utils/general/version
+    utils/rootfs/install_rootfs
+    utils/rootfs/list_installed_rootfs
+    utils/rootfs/list_rootfs
+    utils/rootfs/rootfs
+    utils/rootfs/remove_rootfs
+    utils/rootfs/reset_rootfs
+    utils/rootfs/rootfs_command
+    utils/rootfs/symlink
+    utils/screen/fullscreen
+    utils/screen/transcript_rows
+    utils/screen/disable_session_toast
+    utils/screen/fullscreen_workaround
+    utils/screen/reset_transcript_rows
+    utils/shortcut/shortcut_create_session
+    utils/shortcut/shortcut_next_session
+    utils/shortcut/shortcut_previous_session
+    utils/shortcut/shortcut_rename_session
+    utils/shortcut/reset_shortcut
+    utils/theme/chtheme
+    utils/theme/list_themes
+    utils/theme/reset_theme
+    utils/theme/force_black_ui
+    utils/input/volume_keys
+    utils/fnclock
+)' || exit 1
 
 input="${1}"
-require=(
-    "utils/color"
-    "utils/setconf"
-    "utils/getconf"
-    "utils/birthday"
-    "utils/cursor/chcursor"
-    "utils/cursor/chcursor_blink_rate"
-    "utils/cursor/reset_cursor"
-    "utils/cursor/reset_cursor_blink_rate"
-    "utils/font/chfont"
-    "utils/font/list_fonts"
-    "utils/font/reset_font"
-    "utils/general/help"
-    "utils/general/info"
-    "utils/general/uwu"
-    "utils/general/version"
-    "utils/rootfs/install_rootfs"
-    "utils/rootfs/list_installed_rootfs"
-    "utils/rootfs/list_rootfs"
-    "utils/rootfs/rootfs"
-    "utils/rootfs/remove_rootfs"
-    "utils/rootfs/reset_rootfs"
-    "utils/rootfs/rootfs_command"
-    "utils/rootfs/symlink"
-    "utils/screen/fullscreen"
-    "utils/screen/transcript_rows"
-    "utils/screen/disable_session_toast"
-    "utils/screen/fullscreen_workaround"
-    "utils/screen/reset_transcript_rows"
-    "utils/shortcut/shortcut_create_session"
-    "utils/shortcut/shortcut_next_session"
-    "utils/shortcut/shortcut_previous_session"
-    "utils/shortcut/shortcut_rename_session"
-    "utils/shortcut/reset_shortcut"
-    "utils/theme/chtheme"
-    "utils/theme/list_themes"
-    "utils/theme/reset_theme"
-    "utils/theme/force_black_ui"
-    "utils/input/volume_keys"
-)
-
-for i in "${require[@]}"; do
-    source "${muxlyroot}/${i}.sh"
-done
 
 case "${input}" in
     "")
-        echo -e "${R}[!] ${N}Invalid input!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        exit 1
+        utils::invalidInput
+        exit $?
         ;;
     "--info")
-        __info__
+        utils::general::Info
         exit $?
         ;;
     "--chfont")
-        __chfont__ "${2}"
+        utils::font::Chfont "${2}"
         exit $?
         ;;
     "--chtheme")
-        __chtheme__ "${2}"
+        utils::theme::Chtheme "${2}"
         exit $?
         ;;
     "--chcursor")
-        __chcursor__ "${2}"
+        utils::cursor::Chcursor "${2}"
         exit $?
         ;;
     "--chcursor-blink-rate")
-        __chcursor_blink_rate__ "${2}"
+        utils::cursor::ChcursorBlinkRate "${2}"
         exit $?
         ;;
     "--rootfs")
         export rfs="${2}"
-        export -f __rootfs__
-        exec bash -c "__rootfs__ \"${rfs}\""
+        export -f utils::rootfs::Rootfs
+        exec bash -c "utils::rootfs::Rootfs \"${rfs}\""
         ;;
     "--install-rootfs")
-        __install_rootfs__ "${2}"
+        utils::rootfs::InstallRootfs "${2}"
         exit $?
         ;;
     "--fullscreen")
-        __fullscreen__ "${2}"
+        utils::screen::Fullscreen "${2}"
         exit $?
         ;;
     "--list-fonts")
-        __list_fonts__
+        utils::font::ListFonts
         exit $?
         ;;
     "--list-themes")
-        __list_themes__ "${2}"
+        utils::theme::ListThemes "${2}"
         exit $?
         ;;
     "--list-rootfs")
-        __list_rootfs__
+        utils::rootfs::ListRootfs
         exit $?
         ;;
     "--list-installed-rootfs")
-        __list_installed_rootfs__
+        utils::rootfs::ListInstalledRootfs
         exit $?
         ;;
     "--reset-font")
-        __reset_font__
+        utils::font::ResetFont
         exit $?
         ;;
     "--reset-theme")
-        __reset_theme__
+        utils::theme::ResetTheme
         exit $?
         ;;
     "--reset-cursor")
-        __reset_cursor__
+        utils::cursor::ResetCursor
         exit $?
         ;;
     "--reset-cursor-blink-rate")
-        __reset_cursor_blink_rate__
+        utils::cursor::ResetCursorBlinkRate
         exit $?
         ;;
     "--shortcut-create-session")
-        __shortcut_create_session__ "${2}"
+        utils::shortcut::ShortcutCreateSession "${2}"
         exit $?
         ;;
     "--shortcut-next-session")
-        __shortcut_next_session__ "${2}"
+        utils::shortcut::ShortcutNextSession "${2}"
         exit $?
         ;;
     "--shortcut-previous-session")
-        __shortcut_previous_session__ "${2}"
+        utils::shortcut::ShortcutPreviousSession "${2}"
         exit $?
         ;;
     "--shortcut-rename-session")
-        __shortcut_rename_session__ "${2}"
+        utils::shortcut::ShortcutRenameSession "${2}"
         exit $?
         ;;
     "--reset-shortcut")
-        __reset_shortcut__
+        utils::shortcut::ResetShortcut
         exit $?
         ;;
     "--volume-keys")
-        __volume_keys__ "${2}"
+        utils::input::VolumeKeys "${2}"
         exit $?
         ;;
     "--disable-session-toast")
-        __disable_session_toast__ "${2}"
+        utils::screen::DisableSessionToast "${2}"
         exit $?
         ;;
     "--transcript-rows")
-        __transcript_rows__ "${2}"
+        utils::screen::TranscriptRows "${2}"
         exit $?
         ;;
     "--fullscreen-workaround")
-        __fullscreen_workaround__ "${2}"
+        utils::screen::FullscreenWorkaround "${2}"
         exit $?
         ;;
     "--force-black-ui")
-        __force_black_ui__ "${2}"
+        utils::theme::ForceBlackUI "${2}"
         exit $?
         ;;
     "--reset-transcript-rows")
-        __reset_transcript_rows__
+        utils::screen::ResetTranscriptRows
         exit $?
         ;;
     "--remove-rootfs")
-        __remove_rootfs__ "${2}"
+        utils::rootfs::RemoveRootfs "${2}"
         exit $?
         ;;
     "--reset-rootfs")
-        __reset_rootfs__ "${2}"
+        utils::rootfs::ResetRootfs "${2}"
         exit $?
         ;;
     "--rootfs-command")
-        __rootfs_command__ "${2}" "${3}"
+        utils::rootfs::RootfsCommand "${2}" "${3}"
         exit $?
         ;;
     "--symlink")
-        __symlink__ "${2}" "${3}"
+        utils::rootfs::Symlink "${2}" "${3}"
         exit $?
         ;;
     "--help")
-        __help__
-        exit 0
+        utils::general::Help
+        exit $?
         ;;
     "--version")
-        __version__
-        exit 0
+        utils::general::Version
+        exit $?
         ;;
     "--uwu")
         printf '\033[?25l'
-        __uwu__
+        utils::general::Uwu
+        ex=$?
         printf '\033[?25h'
-        exit 0
+        exit $ex
         ;;
     *)
-        echo -e "${R}[!] ${N}Unknown options: ${GG}${input}${N}"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        exit 1
+        utils::unknownCommand "${input}"
+        exit $?
         ;;
 esac
 

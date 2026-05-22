@@ -1,10 +1,9 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __chtheme__() {
+function utils::theme::Chtheme() {
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ ! -f "${muxlyroot}/style/theme/${1}" ]]; then
@@ -22,7 +21,7 @@ function __chtheme__() {
         "${thpath}"
 
     command termux-reload-settings
-    __setconf__ "theme-style" "${1}"
+    utils::setconf "theme-style" "${1}"
 
     echo -e "${B}[*] ${N}Change theme style: ${GG}${1}${N}"
     return 0

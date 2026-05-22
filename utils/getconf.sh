@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __getconf__() {
+function utils::getconf() {
     [[ -z "${1}" ]] && return 1
     command cat "${config}" | \
     command grep "${1} = " | \

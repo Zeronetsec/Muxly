@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __chcursor__() {
+function utils::cursor::Chcursor() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ "${1}" != "block" && "${1}" != "underline" && "${1}" != "bar" ]]; then
@@ -36,7 +35,7 @@ function __chcursor__() {
         "bar") printf '\e[6 q' ;;
     esac
 
-    __setconf__ "terminal-cursor-style" "${1}"
+    utils::setconf "terminal-cursor-style" "${1}"
 
     echo -e "${B}[*] ${N}Change cursor style: ${GG}${1}${N}"
     return 0

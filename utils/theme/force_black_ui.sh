@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __force_black_ui__() {
+function utils::theme::ForceBlackUI() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ "${1}" != "true" && "${1}" != "false" ]]; then
@@ -30,7 +29,7 @@ function __force_black_ui__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "force-black-ui" "${1}"
+    utils::setconf "force-black-ui" "${1}"
 
     echo -e "${B}[*] ${N}Change force black ui: ${GG}${1}${N}"
     return 0

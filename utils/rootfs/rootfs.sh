@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __rootfs__() {
+function utils::rootfs::Rootfs() {
     if [[ ! -d "${rfspath}" ]]; then
         echo -e "${R}[!] ${N}Folder: ${GG}${rfspath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ ! -d "${rfspath}/${1}" ]]; then

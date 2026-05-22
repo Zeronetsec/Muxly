@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __chcursor_blink_rate__() {
+function utils::cursor::ChcursorBlinkRate() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ "${1}" -lt 0 || "${1}" -gt 2000 ]]; then
@@ -31,7 +30,7 @@ function __chcursor_blink_rate__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "terminal-cursor-blink-rate" "${1}"
+    utils::setconf "terminal-cursor-blink-rate" "${1}"
 
     echo -e "${B}[*] ${N}Change cursor blink rate: ${GG}${1}${N}"
     return 0

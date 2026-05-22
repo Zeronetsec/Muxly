@@ -1,12 +1,11 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __install_rootfs__() {
+function utils::rootfs::InstallRootfs() {
     local rootfs="${muxlyroot}/rootfs"
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ ! -d "${rootfs}/${1}" ]]; then

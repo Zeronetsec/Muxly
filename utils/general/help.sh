@@ -1,12 +1,11 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __help__() {
+function utils::general::Help() {
     export metadata="${muxlyroot}/metadata"
     local engine="${muxlyroot}/utils/json_parser.py"
 
     if [[ -f "${engine}" ]]; then
-        __birthday__
-
+        utils::birthday
         echo -e "${N}Usage: ${GG}muxly ${CC}<command> [<args>]${N}"
         printf '\n'
 
@@ -20,6 +19,8 @@ function __help__() {
         echo -e "${R}[!] ${N}Engine: ${GG}${engine} ${N}not found!"
         return 1
     fi
+
+    return 0
 }
 
 # Copyright (c) 2026 Zeronetsec

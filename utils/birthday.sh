@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __birthday__() {
+function utils::birthday() {
     local birth_date="04-01"
     local today="$(command date '+%m-%d')"
     if [[ "${today}" == "${birth_date}" ]]; then

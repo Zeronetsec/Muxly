@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __list_fonts__() {
+function utils::font::ListFonts() {
     local folder="${muxlyroot}/style/font"
 
     if [[ ! -d "${folder}" ]]; then

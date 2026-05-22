@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __shortcut_rename_session__() {
+function utils::shortcut::ShortcutRenameSession() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     command cat "${proppath}" | \
@@ -25,7 +24,7 @@ function __shortcut_rename_session__() {
     command rm -f "${utemp}"
     command termux-reload-settings
 
-    __setconf__ "shortcut-rename-session" "${1}"
+    utils::setconf "shortcut-rename-session" "${1}"
 
     echo -e "${B}[*] ${N}Change shortcut rename session: ${GG}${1}${N}"
     return 0

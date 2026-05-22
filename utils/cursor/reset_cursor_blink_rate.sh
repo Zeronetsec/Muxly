@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __reset_cursor_blink_rate__() {
+function utils::cursor::ResetCursorBlinkRate() {
     if [[ ! -f "${proppath}" ]]; then
         echo -e "${R}[!] ${N}File: ${GG}${proppath} ${N}not found!"
         return 1

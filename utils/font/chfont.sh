@@ -1,15 +1,14 @@
 # https://github.com/Zeronetsec/Muxly
 
-function __chfont__() {
+function utils::font::Chfont() {
     if [[ -f "${fontpath}" ]]; then
         command unlink "${fontpath}" 2>/dev/null || \
             command rm -f "${fontpath}" 2>/dev/null
     fi
 
     if [[ -z "${1}" ]]; then
-        echo -e "${R}[!] ${N}Missing arguments!"
-        echo -e "${R}[!] ${N}Try: ${GG}muxly --help${N}"
-        return 1
+        utils::missingArguments
+        return $?
     fi
 
     if [[ ! -f "${muxlyroot}/style/font/${1}.ttf" ]]; then
@@ -22,7 +21,7 @@ function __chfont__() {
         "${fontpath}"
 
     command termux-reload-settings
-    __setconf__ "font-style" "${1}"
+    utils::setconf "font-style" "${1}"
 
     echo -e "${B}[*] ${N}Change font style: ${GG}${1}${N}"
     return 0
