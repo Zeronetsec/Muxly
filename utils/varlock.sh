@@ -1,6 +1,5 @@
 # https://github.com/Zeronetsec/Muxly
 
-readonly muxlyroot
 readonly config
 readonly proppath
 readonly rfspath

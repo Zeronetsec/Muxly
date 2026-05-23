@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # https://github.com/Zeronetsec/Muxly
 
+set -o errexit
+
 src="${BASH_SOURCE[0]}"
 while [[ -h "${src}" ]]; do
     dir="$(
@@ -20,6 +22,8 @@ dir="$(
 )"
 
 export muxlyroot="${dir}"
+readonly muxlyroot
+
 source "${muxlyroot}/utils/include.sh"
 
 include : '(
@@ -67,34 +71,27 @@ include : '(
     utils/theme/force_black_ui
     utils/input/volume_keys
     utils/fnclock
-)' || exit 1
+)'
 
 input="${1}"
-
 case "${input}" in
     "")
         utils::invalidInput
-        exit $?
         ;;
     "--info")
         utils::general::Info
-        exit $?
         ;;
     "--chfont")
         utils::font::Chfont "${2}"
-        exit $?
         ;;
     "--chtheme")
         utils::theme::Chtheme "${2}"
-        exit $?
         ;;
     "--chcursor")
         utils::cursor::Chcursor "${2}"
-        exit $?
         ;;
     "--chcursor-blink-rate")
         utils::cursor::ChcursorBlinkRate "${2}"
-        exit $?
         ;;
     "--rootfs")
         export rfs="${2}"
@@ -103,122 +100,92 @@ case "${input}" in
         ;;
     "--install-rootfs")
         utils::rootfs::InstallRootfs "${2}"
-        exit $?
         ;;
     "--fullscreen")
         utils::screen::Fullscreen "${2}"
-        exit $?
         ;;
     "--list-fonts")
         utils::font::ListFonts
-        exit $?
         ;;
     "--list-themes")
         utils::theme::ListThemes "${2}"
-        exit $?
         ;;
     "--list-rootfs")
         utils::rootfs::ListRootfs
-        exit $?
         ;;
     "--list-installed-rootfs")
         utils::rootfs::ListInstalledRootfs
-        exit $?
         ;;
     "--reset-font")
         utils::font::ResetFont
-        exit $?
         ;;
     "--reset-theme")
         utils::theme::ResetTheme
-        exit $?
         ;;
     "--reset-cursor")
         utils::cursor::ResetCursor
-        exit $?
         ;;
     "--reset-cursor-blink-rate")
         utils::cursor::ResetCursorBlinkRate
-        exit $?
         ;;
     "--shortcut-create-session")
         utils::shortcut::ShortcutCreateSession "${2}"
-        exit $?
         ;;
     "--shortcut-next-session")
         utils::shortcut::ShortcutNextSession "${2}"
-        exit $?
         ;;
     "--shortcut-previous-session")
         utils::shortcut::ShortcutPreviousSession "${2}"
-        exit $?
         ;;
     "--shortcut-rename-session")
         utils::shortcut::ShortcutRenameSession "${2}"
-        exit $?
         ;;
     "--reset-shortcut")
         utils::shortcut::ResetShortcut
-        exit $?
         ;;
     "--volume-keys")
         utils::input::VolumeKeys "${2}"
-        exit $?
         ;;
     "--disable-session-toast")
         utils::screen::DisableSessionToast "${2}"
-        exit $?
         ;;
     "--transcript-rows")
         utils::screen::TranscriptRows "${2}"
-        exit $?
         ;;
     "--fullscreen-workaround")
         utils::screen::FullscreenWorkaround "${2}"
-        exit $?
         ;;
     "--force-black-ui")
         utils::theme::ForceBlackUI "${2}"
-        exit $?
         ;;
     "--reset-transcript-rows")
         utils::screen::ResetTranscriptRows
-        exit $?
         ;;
     "--remove-rootfs")
         utils::rootfs::RemoveRootfs "${2}"
-        exit $?
         ;;
     "--reset-rootfs")
         utils::rootfs::ResetRootfs "${2}"
-        exit $?
         ;;
     "--rootfs-command")
         utils::rootfs::RootfsCommand "${2}" "${3}"
-        exit $?
         ;;
     "--symlink")
         utils::rootfs::Symlink "${2}" "${3}"
-        exit $?
         ;;
     "--help")
         utils::general::Help
-        exit $?
         ;;
     "--version")
         utils::general::Version
-        exit $?
         ;;
     "--uwu")
         printf '\033[?25l'
         utils::general::Uwu
-        ex=$?
         printf '\033[?25h'
-        exit $ex
         ;;
     *)
         utils::unknownCommand "${input}"
-        exit $?
         ;;
 esac
 
