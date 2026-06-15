@@ -5,3 +5,4 @@ zip
 proot-distro
 gawk::awk
 grep
+sed
