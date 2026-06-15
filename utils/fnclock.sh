@@ -1,6 +1,7 @@
 # https://github.com/Zeronetsec/Muxly
 
 readonly -f utils::birthday
+readobly -f utils::banner
 readonly -f utils::getconf
 readonly -f utils::setconf
 readonly -f utils::invalidOption
