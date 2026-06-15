@@ -5,8 +5,7 @@
 [![license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 
 # Muxly
-Muxly is a Swiss Army knife for Termux customization. </br>
-It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
+Muxly is a Swiss Army knife for Termux customization, including fonts, themes, cursor styles, shortcuts, and rootfs management.
 
 ## Features
 - Easy font and theme customization
