@@ -1,3 +1,6 @@
+.install/** linguist-vendored
+
 rootfs/** linguist-vendored
 style/** linguist-vendored
+
 install.sh linguist-vendored

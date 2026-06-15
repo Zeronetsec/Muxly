@@ -1,0 +1,30 @@
+# https://github.com/Zeronetsec/Muxly
+
+function module::font::Chfont() {
+    if [[ -f "${fontpath}" ]]; then
+        command unlink "${fontpath}" 2>/dev/null || \
+            command rm -f "${fontpath}" 2>/dev/null
+    fi
+
+    if [[ -z "${1}" ]]; then
+        utils::missingArgument
+        return 1
+    fi
+
+    if [[ ! -f "${root}/style/font/${1}.ttf" ]]; then
+        echo -e "${R}[!] ${N}Invalid font style: ${GG}${1}${N}"
+        return 1
+    fi
+
+    command ln -sf \
+        "${root}/style/font/${1}.ttf" \
+        "${fontpath}"
+
+    command termux-reload-settings
+    utils::setconf "font-style" "${1}"
+
+    echo -e "${B}[*] ${N}Change font style: ${GG}${1}${N}"
+    return 0
+}
+
+# Copyright (c) 2026 Zeronetsec

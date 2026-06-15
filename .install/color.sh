@@ -1,0 +1,5 @@
+export N='\x1b[0m'
+export R='\x1b[1;31m'
+export B='\x1b[1;34m'
+export GG='\x1b[0;32m'
+export DG='\x1b[1;90m'

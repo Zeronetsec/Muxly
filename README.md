@@ -1,11 +1,11 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
-[![version](https://img.shields.io/badge/Muxly-Version%200.1-blue.svg?maxAge=259200)]()
+[![version](https://img.shields.io/badge/Muxly-Version%200.1-blue.svg)]()
 [![os](https://img.shields.io/badge/Supported%20OS-Android-blue.svg)]()
 [![license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 
 # Muxly
-Muxly is a Swiss Army knife for Termux customization. <br>
+Muxly is a Swiss Army knife for Termux customization. </br>
 It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 
 ## Features
@@ -13,42 +13,36 @@ It simplifies managing fonts, themes, cursor styles, shortcuts, and rootfs.
 - Flexible cursor and shortcut controls
 - Root filesystem (Linux distro) management
 - Simple and intuitive CLI experience
-- Real-time configuration updates
-- And more.
+- And more features.
 
 ## Disclaimer
-This tool modifies your `~/.termux/*` and `/data/data/com.termux/files/usr/var/lib/proot-distro/containers/*`. <br>
-Please read the
-[DISCLAIMER](DISCLAIMER.md)
-before use. <br>
-Use at your own risk.
+Please read [.docs/disclaimer.md](.docs/disclaimer.md) before using this tool. </br>
+Use this software at your own risk. </br>
+The author is not responsible for any damage, data loss, or issues that may result from its use.
 
 ## Installation
+Quick install:
 ```bash
 git clone https://github.com/Zeronetsec/Muxly
 cd Muxly
 chmod +x install.sh
-./install.sh # --backup
+./install.sh
 ```
+For more detailed installation and uninstallation instructions, see [.docs/install_and_uninstall.md](.docs/install_and_uninstall.md).
 
-## Usage
+## Usage Example
 ```bash
-muxly --chfont <font>
-muxly --chtheme <theme>
-muxly --chcursor <block|underline|bar>
-muxly --fullscreen <true|false>
-muxly --shortcut-create-session <value>
-muxly --disable-session-toast <true|false>
-muxly --install-rootfs <distro>
-muxly --volume-keys <value>
+muxly --chfont source_code_pro
+muxly --chtheme tokyonight_dark
+muxly --chcursor underline
+muxly --shortcut-create-session 'ctrl+`'
+muxly --install-rootfs kali_rolling
 ```
 And more commands.
 
 ## Credits
-This project incorporates components from third-party sources. <br>
-Please refer to
-[CREDITS](CREDITS.md)
-for full details and licensing information.
+This project incorporates components from third-party sources. </br>
+Please refer to [.docs/credits.md](.docs/credits.md) for full details and licensing information.
 
 ## License
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.

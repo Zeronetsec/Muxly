@@ -1,0 +1,109 @@
+function install::installer() {
+    if [[ "${__BACKUP__}" == true && -d "${opt}/muxly" ]]; then
+        (
+            cd "${opt}"
+            install::getinstall \
+                "
+                    command zip -r \
+                    muxly_${bkdate}.bak.zip \
+                    muxly
+                " \
+                "Backup: ${GG}${opt}/muxly ${DG}-> ${GG}${opt}/muxly_${bkdate}.bak.zip${N}"
+            cd
+        )
+    fi
+
+    local tprop="${HOME}/.termux/termux.properties"
+    local tfont="${HOME}/.termux/font.ttf"
+    local tth="${HOME}/.termux/colors.properties"
+    local rfs="${prefix}/var/lib/proot-distro/containers"
+
+    if [[ "${__BACKUP__}" == true ]]; then
+        if [[ -f "${tprop}" || -L "${tprop}" ]]; then
+            install::getinstall \
+                "
+                    command cp \
+                    ${tprop} \
+                    ${tprop}_${bkdate}.bak
+                " \
+                "Backup: ${GG}${tprop} ${DG}-> ${GG}${tprop}_${bkdate}.bak${N}"
+        fi
+
+        if [[ -f "${tfont}" || -L "${tfont}" ]]; then
+            install::getinstall \
+                "
+                    command cp \
+                    ${tfont} \
+                    ${tfont}_${bkdate}.bak
+                " \
+                "Backup: ${GG}${tfont} ${DG}-> ${GG}${tfont}_${bkdate}.bak${N}"
+        fi
+
+        if [[ -f "${tth}" || -L "${tth}" ]]; then
+            install::getinstall \
+                "
+                    command cp \
+                    ${tth} \
+                    ${tth}_${bkdate}.bak
+                " \
+                "Backup: ${GG}${tth} ${DG}-> ${GG}${tth}_${bkdate}.bak${N}"
+        fi
+
+        if [[ -d "${rfs}" ]]; then
+            shopt -s nullglob
+            bk=("${rfs}"/*)
+            shopt -u nullglob
+
+            if [[ "${#bk[@]}" -gt 0 ]]; then
+                for i in "${bk[@]}"; do
+                    dsname="${i##*/}"
+                    install::getinstall \
+                        "
+                            command proot-distro \
+                            backup ${dsname}
+                        " \
+                        "Backup: ${GG}${dsname}${N}"
+                done
+            fi
+        fi
+    fi
+
+    if [[ ! -d "${HOME}/.config/muxly" ]]; then
+        install::getinstall \
+            "
+                command mkdir -p \
+                ${HOME}/.config/muxly
+            " \
+            "Create directory: ${GG}${HOME}/.config/muxly${N}"
+    fi
+
+    if [[ ! -f "${HOME}/.config/muxly/config.conf" ]]; then
+        install::getinstall \
+            "
+                command cp \
+                ${root}/config/config.conf \
+                ${HOME}/.config/muxly/config.conf
+            " \
+            "Copying: ${GG}${path}/config/config.conf ${DG}-> ${GG}${HOME}/.config/muxly/config.conf${N}"
+    fi
+
+    install::getinstall \
+        "command rm -rf ${opt}/muxly" \
+        "Removing old muxly..."
+
+    install::getinstall \
+        "command mv ${root} ${opt}/muxly" \
+        "Moving: ${GG}${root} ${DG}-> ${GG}${opt}/muxly${N}"
+
+    install::getinstall \
+        "command chmod +x ${opt}/muxly/muxly.sh" \
+        "Setting up permissions for: ${GG}${opt}/muxly/muxly.sh${N}"
+
+    install::getinstall \
+        "command chmod +x ${opt}/muxly/utils/python/*" \
+        "Setting up permissions for: ${GG}${opt}/muxly/utils/python/*"
+
+    install::getinstall \
+        "command ln -sf ${opt}/muxly/muxly.sh ${bin}/muxly" \
+        "Symlink: ${GG}${opt}/muxly/muxly.sh ${DG}-> ${GG}${bin}/muxly${N}"
+}

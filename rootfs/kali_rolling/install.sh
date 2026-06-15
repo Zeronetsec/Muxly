@@ -19,7 +19,7 @@ if [[ -f "${fullpath}" ]]; then
 fi
 
 command cp -v \
-    "${muxlyroot}/rootfs/${distro}/rootfs.sh" \
+    "${root}/rootfs/${distro}/rootfs.sh" \
     "${fullpath}"
 
 command chmod -v +x "${fullpath}"

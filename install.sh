@@ -1,165 +1,58 @@
 #!/usr/bin/env bash
-# https://github.com/Zeronetsec/Muxly
 
-N='\033[0m'
-R='\033[1;31m'
-B='\033[1;34m'
-GG='\033[0;32m'
-DG='\033[1;90m'
+set -o errexit
 
-base="${PREFIX}/opt"
-symlink="${PREFIX}/bin"
-bkdate="$(command date '+%Y_%b_%d_%H_%M_%S')"
-
-path="$(
-    cd -- "$(
-        command dirname -- "${BASH_SOURCE[0]}"
-    )" &> /dev/null && pwd
-)"
-
-if [[ "${1}" == "--backup" ]]; then
-    backup="true"
-fi
-
-function install() {
-    local cmd="${1}"
-    local desc="${2}"
-    echo -e "\n${B}[*] ${N}${desc}"
-    eval "${cmd}" >/dev/null
-    local status=$?
-    echo -e "    ${DG}└── ${N}exit: ${GG}${status}${N}"
-}
-
-function android_check() {
-    [[ -x '/system/bin/getprop' ]] && return 0
-    [[ -f '/system/bin/linker' || -f '/system/bin/linker64' ]] && return 0
-    [[ -d '/dev/cpuctl' ]] && return 0
-    [[ -d '/storage/emulated/0/Android' ]] && return 0
-    [[ -d '/data/data/com.termux/' ]] && return 0
-    [[ -n "${PREFIX}" && -n "${TERMUX_VERSION}" ]] && return 0
-    return 1
-}
-
-android_check || {
-    echo -e "${R}[!] ${N}Termux environment not detected."
-    echo -e "${R}[!] ${N}This tool is designed exclusively for the Termux Android app."
-    exit 1
-}
-
-if [[ ! -d "${path}" ]]; then
-    echo -e "${R}[!] ${N}Folder: ${GG}${path} ${N}not found! \n"
-    exit 1
-fi
-
-echo -e "${B}[*] ${N}Installing: ${GG}Muxly${N}"
-
-pack=(
-    "bash"
-    "zip"
-    "proot-distro"
-    "coreutils"
-    "gawk"
-    "grep"
-    "python3"
-)
-
-for i in "${pack[@]}"; do
-    install \
-        "command apt install -y ${i}" \
-        "Installing: ${GG}${i}${N}" 2>/dev/null
+src="${BASH_SOURCE[0]}"
+while [[ -h "${src}" ]]; do
+    dir="$(
+        cd -P "$(
+            command dirname "${src}"
+        )" > /dev/null 2>&1 && pwd
+    )"
+    src="$(command readlink "${src}")"
+    [[ "${src}" != /* ]] && src="${dir}/${src}"
 done
 
-if [[ ! -d "${base}" ]]; then
-    install \
-        "command mkdir -p ${base}" \
-        "Create directory: ${GG}${base}${N}"
-fi
+dir="$(
+    cd -P "$(
+        command dirname "${src}"
+    )" > /dev/null 2>&1 && pwd
+)"
 
+export root="${dir}"
+readonly root
 
-if [[ "${backup}" == "true" && -d "${base}/muxly" ]]; then
-    cd "${base}"
-    install \
-        "command zip -r muxly_${bkdate}.bak.zip muxly" \
-        "Backup: ${GG}${base}/muxly ${DG}=> ${GG}${base}/muxly_${bkdate}.bak.zip${N}"
-    cd
-fi
+source "${root}/.install/include.sh"
+include : '(
+    .install/color
+    .install/variable
+    .install/error
+    .install/varlock
+    .install/zinstall
+    .install/zparser
+    .install/android_check
+    .install/inpackages
+    .install/prepdir
+    .install/getinstall
+    .install/installer
+    .install/checker
+    .install/fnclock
+)'
 
-tprop="${HOME}/.termux/termux.properties"
-tfont="${HOME}/.termux/font.ttf"
-tth="${HOME}/.termux/colors.properties"
-rfs="${PREFIX}/var/lib/proot-distro/installed-rootfs"
+__BACKUP__=false
 
-if [[ "${backup}" == "true" ]]; then
-    if [[ -f "${tprop}" || -L "${tprop}" ]]; then
-        install \
-            "command cp ${tprop} ${tprop}_${bkdate}.bak" \
-            "Backup: ${GG}${tprop} ${DG}=> ${GG}${tprop}_${bkdate}.bak${N}"
-    fi
+while [[ ${#} -gt 0 ]]; do
+    case "${1}" in
+        "--backup") export __BACKUP__=true ;;
+    esac
+    shift
+done
 
-    if [[ -f "${tfont}" || -L "${tfont}" ]]; then
-        install \
-            "command cp ${tfont} ${tfont}_${bkdate}.bak" \
-            "Backup: ${GG}${tfont} ${DG}=> ${GG}${tfont}_${bkdate}.bak${N}"
-    fi
+install::androidCheck
+install::inpackages
+install::prepdir
+install::installer
+install::checker
 
-    if [[ -f "${tth}" || -L "${tth}" ]]; then
-        install \
-            "command cp ${tth} ${tth}_${bkdate}.bak" \
-            "Backup: ${GG}${tth} ${DG}=> ${GG}${tth}_${bkdate}.bak${N}"
-    fi
-
-    if [[ -d "${rfs}" ]]; then
-        shopt -s nullglob
-        bk=("${rfs}"/*)
-        shopt -u nullglob
-
-        if [[ "${#bk[@]}" -gt 0 ]]; then
-            for i in "${bk[@]}"; do
-                dsname="${i##*/}"
-                install \
-                    "command proot-distro backup ${dsname}" \
-                    "Backup: ${GG}${dsname}${N}" 2>/dev/null
-            done
-        fi
-    fi
-fi
-
-if [[ ! -d "${HOME}/.config/muxly" ]]; then
-    install \
-        "command mkdir -p ${HOME}/.config/muxly" \
-        "Create directory: ${GG}${HOME}/.config/muxly${N}"
-fi
-
-if [[ ! -f "${HOME}/.config/muxly/config.conf" ]]; then
-    install \
-        "command cp ${path}/config/config.conf ${HOME}/.config/muxly/config.conf" \
-        "Copying: ${GG}${path}/config/config.conf ${DG}=> ${GG}${HOME}/.config/muxly/config.conf${N}"
-fi
-
-install \
-    "command rm -rf ${base}/muxly" \
-    "Removing: ${GG}old muxly${N}"
-
-install \
-    "command mv ${path} ${base}/muxly" \
-    "Moving: ${GG}${path} ${DG}=> ${GG}${base}/muxly${N}"
-
-install \
-    "command chmod +x -R ${base}/muxly" \
-    "Setting up permissions"
-
-install \
-    "command ln -sf ${base}/muxly/muxly.sh ${symlink}/muxly" \
-    "Symlink: ${GG}${base}/muxly/muxly.sh ${DG}=> ${GG}${symlink}/muxly${N}"
-
-printf '\n'
-if command -v muxly &>/dev/null; then
-    echo -e "${GG}[+] ${N}Muxly installed!"
-    echo -e "${GG}[+] ${N}Usage: ${GG}muxly --help ${N}to show helper"
-    exit 0
-else
-    echo -e "${R}[!] ${N}Failed installing muxly!"
-    exit 1
-fi
-
-# Copyright (c) 2026 Zeronetsec
+trap - EXIT
+exit ${?}

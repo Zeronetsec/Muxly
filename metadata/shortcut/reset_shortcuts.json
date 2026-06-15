@@ -1,0 +1,5 @@
+{
+	"Command": "--reset-shortcuts",
+	"Args": "",
+	"Description": "reset all shortcuts"
+}

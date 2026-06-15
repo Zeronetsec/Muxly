@@ -1,0 +1,7 @@
+bash
+python3
+coreutils
+zip
+proot-distro
+gawk::awk
+grep

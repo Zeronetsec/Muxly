@@ -3,50 +3,49 @@
 readonly -f utils::birthday
 readonly -f utils::getconf
 readonly -f utils::setconf
-readonly -f utils::invalidInput
-readonly -f utils::unknownCommand
-readonly -f utils::missingArguments
+readonly -f utils::invalidOption
+readonly -f utils::missingArgument
 
-readonly -f utils::cursor::Chcursor
-readonly -f utils::cursor::ChcursorBlinkRate
-readonly -f utils::cursor::ResetCursor
-readonly -f utils::cursor::ResetCursorBlinkRate
+readonly -f module::cursor::Chcursor
+readonly -f module::cursor::ChcursorBlinkRate
+readonly -f module::cursor::ResetCursor
+readonly -f module::cursor::ResetCursorBlinkRate
 
-readonly -f utils::font::Chfont
-readonly -f utils::font::ListFonts
-readonly -f utils::font::ResetFont
+readonly -f module::font::Chfont
+readonly -f module::font::ListFonts
+readonly -f module::font::ResetFont
 
-readonly -f utils::general::Help
-readonly -f utils::general::Info
-readonly -f utils::general::Uwu
-readonly -f utils::general::Version
+readonly -f module::general::Help
+readonly -f module::general::Info
+readonly -f module::general::Uwu
+readonly -f module::general::Version
 
-readonly -f utils::input::VolumeKeys
+readonly -f module::input::VolumeKeys
 
-readonly -f utils::rootfs::InstallRootfs
-readonly -f utils::rootfs::ListInstalledRootfs
-readonly -f utils::rootfs::ListRootfs
-readonly -f utils::rootfs::RemoveRootfs
-readonly -f utils::rootfs::ResetRootfs
-readonly -f utils::rootfs::Rootfs
-readonly -f utils::rootfs::RootfsCommand
-readonly -f utils::rootfs::Symlink
+readonly -f module::rootfs::InstallRootfs
+readonly -f module::rootfs::ListInstalledRootfs
+readonly -f module::rootfs::ListRootfs
+readonly -f module::rootfs::RemoveRootfs
+readonly -f module::rootfs::ResetRootfs
+readonly -f module::rootfs::Rootfs
+readonly -f module::rootfs::RootfsCommand
+readonly -f module::rootfs::Symlink
 
-readonly -f utils::screen::DisableSessionToast
-readonly -f utils::screen::Fullscreen
-readonly -f utils::screen::FullscreenWorkaround
-readonly -f utils::screen::ResetTranscriptRows
-readonly -f utils::screen::TranscriptRows
+readonly -f module::screen::DisableSessionToast
+readonly -f module::screen::Fullscreen
+readonly -f module::screen::FullscreenWorkaround
+readonly -f module::screen::ResetTranscriptRows
+readonly -f module::screen::TranscriptRows
 
-readonly -f utils::shortcut::ResetShortcut
-readonly -f utils::shortcut::ShortcutCreateSession
-readonly -f utils::shortcut::ShortcutNextSession
-readonly -f utils::shortcut::ShortcutPreviousSession
-readonly -f utils::shortcut::ShortcutRenameSession
+readonly -f module::shortcut::ResetShortcuts
+readonly -f module::shortcut::ShortcutCreateSession
+readonly -f module::shortcut::ShortcutNextSession
+readonly -f module::shortcut::ShortcutPreviousSession
+readonly -f module::shortcut::ShortcutRenameSession
 
-readonly -f utils::theme::Chtheme
-readonly -f utils::theme::ForceBlackUI
-readonly -f utils::theme::ListThemes
-readonly -f utils::theme::ResetTheme
+readonly -f module::theme::Chtheme
+readonly -f module::theme::ForceBlackUI
+readonly -f module::theme::ListThemes
+readonly -f module::theme::ResetTheme
 
 # Copyright (c) 2026 Zeronetsec

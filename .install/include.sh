@@ -1,8 +1,7 @@
-# https://github.com/Zeronetsec/Muxly
-
 function include() {
     local input_data
     local line
+    local ecode
 
     if [[ "${1}" != ":" ]]; then
         return 1
@@ -38,7 +37,3 @@ function include() {
 
     return 0
 }
-
-readonly -f include
-
-# Copyright (c) 2026 Zeronetsec
