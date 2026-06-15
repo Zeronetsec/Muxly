@@ -31,6 +31,7 @@ include : '(
     utils/setconf
     utils/getconf
     utils/birthday
+    utils/banner
     utils/invalid_option
     utils/missing_argument
     module/cursor/chcursor

@@ -8,10 +8,10 @@
 Muxly is a Swiss Army knife for Termux customization, including fonts, themes, cursor styles, shortcuts, and rootfs management.
 
 ## Features
-- Easy font and theme customization
-- Flexible cursor and shortcut controls
-- Root filesystem (Linux distro) management
-- Simple and intuitive CLI experience
+- Easy font and theme customization.
+- Flexible cursor and shortcut controls.
+- Root filesystem (Linux distro) management.
+- Simple and intuitive CLI experience.
 - And more features.
 
 ## Disclaimer

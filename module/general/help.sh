@@ -5,6 +5,7 @@ function module::general::Help() {
     local engine="${root}/utils/python/json_parser.py"
 
     if [[ -f "${engine}" ]]; then
+        utils::banner
         utils::birthday
         echo -e "${N}Usage: ${GG}muxly ${CC}<option> [<args>]${N}"
         printf '\n'
