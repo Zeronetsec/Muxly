@@ -26,7 +26,7 @@ for idx, dir_path in enumerate(directories):
         print()
 
     section = os.path.basename(os.path.dirname(dir_path))
-    print(f"{N}{section.capitalize()} commands:")
+    print(f"{N}{section.capitalize()} options:")
 
     json_pattern = os.path.join(dir_path, "*.json")
     for file_path in sorted(glob.glob(json_pattern)):
