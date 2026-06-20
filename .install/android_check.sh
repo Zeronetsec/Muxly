@@ -9,6 +9,7 @@ function install::androidCheck() {
         return 1
     }
 
+    echo -e "${B}[*] ${N}Checking android environment..."
     android_check || {
         echo -e "${R}[!] ${N}Termux environment not detected."
         echo -e "${R}[!] ${N}This tool is designed exclusively for the Termux Android app."
