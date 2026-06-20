@@ -6,20 +6,12 @@
 
 Use `--backup` to create a backup of the existing Muxly installation before replacing it.
 
-## Termux & Linux (root)
+## Termux (only)
 ```bash
 git clone https://github.com/Zeronetsec/Muxly
 cd Muxly
 chmod +x install.sh
 ./install.sh
-```
-
-## Linux (user)
-```bash
-git clone https://github.com/Zeronetsec/Muxly
-cd Muxly
-chmod +x install.sh
-sudo ./install.sh
 ```
 
 ## Uninstallation
