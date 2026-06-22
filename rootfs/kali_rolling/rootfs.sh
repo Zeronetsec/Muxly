@@ -42,7 +42,7 @@ export PROMPT_DIRTRIM=2
 
 eval "$(command dircolors --sh)"
 
-alias ls='command.ls $LS_OPTIONS'
+alias ls='command ls $LS_OPTIONS'
 alias ll='command ls -lah --color=always'
 alias l='command ls -CF --color=always'
 alias la='command ls -a --color=always'

@@ -3,7 +3,7 @@
 
 set -o errexit
 
-distro="ubuntu_25"
+distro="ubuntu_latest"
 base="ubuntu"
 install="ubuntu"
 fullpath="${rfspath}/${distro}/rootfs/rootfs.sh"
