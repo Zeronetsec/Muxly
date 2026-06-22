@@ -22,6 +22,7 @@ function module::rootfs::Symlink() {
     fi
 
     echo '#!/usr/bin/env bash' > "${PREFIX}/bin/${2}"
+    echo 'export PROOT_NO_SECCOMP=1' >> "${PREFIX}/bin/${2}"
     echo -e \
         "exec proot-distro login ${1} --work-dir \$(pwd) -- ${2} \"\${@}\"" \
         >> "${PREFIX}/bin/${2}"
