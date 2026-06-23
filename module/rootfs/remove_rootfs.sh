@@ -16,7 +16,7 @@ function module::rootfs::RemoveRootfs() {
         return 1
     fi
 
-    command proot-distro remove "${1}"
+    command pd530 remove "${1}"
     return ${?}
 }
 

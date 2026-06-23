@@ -8,11 +8,11 @@ base="debian"
 fullpath="${rfspath}/${distro}/rootfs/rootfs.sh"
 
 if [[ -d "${rfspath}/${base}" ]]; then
-    command proot-distro remove "${base}"
+    command pd530 remove "${base}"
 fi
 
-command proot-distro install "${base}"
-command proot-distro rename "${base}" "${distro}"
+command pd530 install "${base}"
+command pd530 rename "${base}" "${distro}"
 
 if [[ -f "${fullpath}" ]]; then
     command rm -fv "${fullpath}"
@@ -23,7 +23,7 @@ command cp -v \
     "${fullpath}"
 
 command chmod -v +x "${fullpath}"
-command proot-distro login "${distro}" -- bash '/rootfs.sh'
+command pd530 login "${distro}" -- bash '/rootfs.sh'
 command rm -fv "${fullpath}"
 
 echo -e "${B}[*] ${N}Rootfs: ${GG}${distro} ${N}successfully installed"

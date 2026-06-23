@@ -48,25 +48,11 @@ function install::installer() {
                 " \
                 "Backup: ${GG}${tth} ${DG}-> ${GG}${tth}_${bkdate}.bak${N}"
         fi
-
-        if [[ -d "${rfs}" ]]; then
-            shopt -s nullglob
-            bk=("${rfs}"/*)
-            shopt -u nullglob
-
-            if [[ "${#bk[@]}" -gt 0 ]]; then
-                for i in "${bk[@]}"; do
-                    dsname="${i##*/}"
-                    install::getinstall \
-                        "
-                            command proot-distro \
-                            backup ${dsname}
-                        " \
-                        "Backup: ${GG}${dsname}${N}"
-                done
-            fi
-        fi
     fi
+
+    install::getinstall \
+        "command mkdir -p ${rfs}" \
+        "Create directory: ${GG}${rfs}${N}"
 
     if [[ ! -d "${HOME}/.config/muxly" ]]; then
         install::getinstall \
@@ -89,7 +75,7 @@ function install::installer() {
 
     install::getinstall \
         "command rm -rf ${opt}/muxly" \
-        "Removing old muxly..."
+        "Removing old source..."
 
     install::getinstall \
         "command mv ${root} ${opt}/muxly" \
@@ -97,13 +83,21 @@ function install::installer() {
 
     install::getinstall \
         "command chmod +x ${opt}/muxly/muxly.sh" \
-        "Setting up permissions for: ${GG}${opt}/muxly/muxly.sh${N}"
+        "Set permission for: ${GG}${opt}/muxly/muxly.sh${N}"
 
     install::getinstall \
         "command chmod +x ${opt}/muxly/utils/python/*" \
-        "Setting up permissions for: ${GG}${opt}/muxly/utils/python/*"
+        "Set permission for: ${GG}${opt}/muxly/utils/python/*"
 
     install::getinstall \
         "command ln -sf ${opt}/muxly/muxly.sh ${bin}/muxly" \
         "Symlink: ${GG}${opt}/muxly/muxly.sh ${DG}-> ${GG}${bin}/muxly${N}"
+
+    install::getinstall \
+        "command ln -sf ${opt}/muxly/vendor/pd530/proot-distro.py ${bin}/pd530" \
+        "Symlink: ${GG}${opt}/muxly/vendor/pd530/proot-distro.py ${DG}-> ${GG}${bin}/pd530${N}"
+
+    install::getinstall \
+        "command chmod +x ${bin}/pd530" \
+        "Set permission for: ${GG}${bin}/pd530${N}"
 }

@@ -22,6 +22,21 @@ This tool performs modifications on the following directories:
   - Install custom rootfs
   - Remove installed rootfs
 
+## Vendored Packages
+This project intentionally ships with a vendored copy of **proot-distro v5.3.0**. </br>
+This version is pinned to ensure long-term stability and reduce the risk of breaking changes from upstream releases.
+
+As a result, the bundled version may not receive future updates unless there is a compelling reason to update it. </br>
+Stability and compatibility are prioritized over tracking the latest upstream releases.
+
+The vendored binary is installed at:
+- `$PREFIX/bin/pd530`
+
+While the executable name is version-specific, all container root filesystems continue to use the standard storage location:
+- `$PREFIX/var/lib/proot-distro/containers`
+
+This allows existing rootfs data to remain compatible and centralized regardless of the custom binary name used by this project.
+
 ## Risks
 By using this tool, you acknowledge that:
 - The changes made may affect your Termux configuration
@@ -33,6 +48,6 @@ You are fully responsible for any risks or damage caused by using this tool. </b
 It is strongly recommended to create backups before using this tool.
 
 ## Notes
-This tool is not affiliated with the official Termux project and is provided "as is" without any warranties.
+This tool is not affiliated with the official Termux project and is provided "as is", without warranties of any kind.
 
 <!-- Copyright (c) 2026 Zeronetsec -->

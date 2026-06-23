@@ -18,6 +18,7 @@ chmod +x install.sh
 ```bash
 export prefix="${PREFIX:-/usr}"
 rm -f "${prefix}/bin/muxly"
+rm -f "${prefix}/bin/pd530"
 rm -rf "${prefix}/opt/muxly"
 rm -rf ~/.config/muxly
 ```

@@ -16,7 +16,7 @@ function module::rootfs::ResetRootfs() {
         return 1
     fi
 
-    command proot-distro reset "${1}"
+    command pd530 reset "${1}"
     return ${?}
 }
 

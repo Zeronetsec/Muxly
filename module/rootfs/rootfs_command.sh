@@ -16,7 +16,7 @@ function module::rootfs::RootfsCommand() {
         return 1
     fi
 
-    command proot-distro login "${1}" -- "${2}"
+    command pd530 login "${1}" -- "${2}"
     return ${?}
 }
 

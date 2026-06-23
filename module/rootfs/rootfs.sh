@@ -16,7 +16,7 @@ function module::rootfs::Rootfs() {
         return 1
     fi
 
-    exec proot-distro login "${1}"
+    exec pd530 login "${1}"
 }
 
 # Copyright (c) 2026 Zeronetsec
