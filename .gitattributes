@@ -1,6 +1,5 @@
 .install/** linguist-vendored
 rootfs/** linguist-vendored
 style/** linguist-vendored
-vendor/pd530/** linguist-vendored=false
-vendor/pd530/** linguist-documentation=false
+vendor/pd530/** linguist-vendored
 install.sh linguist-vendored
