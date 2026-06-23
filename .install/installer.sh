@@ -5,8 +5,8 @@ function install::installer() {
             install::getinstall \
                 "
                     command zip -r \
-                    muxly_${bkdate}.bak.zip \
-                    muxly
+                        muxly_${bkdate}.bak.zip \
+                        muxly
                 " \
                 "Backup: ${GG}${opt}/muxly ${DG}-> ${GG}${opt}/muxly_${bkdate}.bak.zip${N}"
             cd
@@ -23,8 +23,8 @@ function install::installer() {
             install::getinstall \
                 "
                     command cp \
-                    ${tprop} \
-                    ${tprop}_${bkdate}.bak
+                        ${tprop} \
+                        ${tprop}_${bkdate}.bak
                 " \
                 "Backup: ${GG}${tprop} ${DG}-> ${GG}${tprop}_${bkdate}.bak${N}"
         fi
@@ -33,8 +33,8 @@ function install::installer() {
             install::getinstall \
                 "
                     command cp \
-                    ${tfont} \
-                    ${tfont}_${bkdate}.bak
+                        ${tfont} \
+                        ${tfont}_${bkdate}.bak
                 " \
                 "Backup: ${GG}${tfont} ${DG}-> ${GG}${tfont}_${bkdate}.bak${N}"
         fi
@@ -43,22 +43,24 @@ function install::installer() {
             install::getinstall \
                 "
                     command cp \
-                    ${tth} \
-                    ${tth}_${bkdate}.bak
+                        ${tth} \
+                        ${tth}_${bkdate}.bak
                 " \
                 "Backup: ${GG}${tth} ${DG}-> ${GG}${tth}_${bkdate}.bak${N}"
         fi
     fi
 
-    install::getinstall \
-        "command mkdir -p ${rfs}" \
-        "Create directory: ${GG}${rfs}${N}"
+    if [[ ! -d "${rfs}" ]]; then
+        install::getinstall \
+            "command mkdir -p ${rfs}" \
+            "Create directory: ${GG}${rfs}${N}"
+    fi
 
     if [[ ! -d "${HOME}/.config/muxly" ]]; then
         install::getinstall \
             "
                 command mkdir -p \
-                ${HOME}/.config/muxly
+                    ${HOME}/.config/muxly
             " \
             "Create directory: ${GG}${HOME}/.config/muxly${N}"
     fi
@@ -67,8 +69,8 @@ function install::installer() {
         install::getinstall \
             "
                 command cp \
-                ${root}/config/config.conf \
-                ${HOME}/.config/muxly/config.conf
+                    ${root}/config/config.conf \
+                    ${HOME}/.config/muxly/config.conf
             " \
             "Copying: ${GG}${path}/config/config.conf ${DG}-> ${GG}${HOME}/.config/muxly/config.conf${N}"
     fi
@@ -90,11 +92,19 @@ function install::installer() {
         "Set permission for: ${GG}${opt}/muxly/utils/python/*"
 
     install::getinstall \
-        "command ln -sf ${opt}/muxly/muxly.sh ${bin}/muxly" \
+        "
+            command ln -sf \
+                ${opt}/muxly/muxly.sh \
+                ${bin}/muxly
+        " \
         "Symlink: ${GG}${opt}/muxly/muxly.sh ${DG}-> ${GG}${bin}/muxly${N}"
 
     install::getinstall \
-        "command ln -sf ${opt}/muxly/vendor/pd530/proot-distro.py ${bin}/pd530" \
+        "
+            command ln -sf \
+                ${opt}/muxly/vendor/pd530/proot-distro.py \
+                ${bin}/pd530
+        " \
         "Symlink: ${GG}${opt}/muxly/vendor/pd530/proot-distro.py ${DG}-> ${GG}${bin}/pd530${N}"
 
     install::getinstall \
