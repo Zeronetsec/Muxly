@@ -1,5 +1,5 @@
 {
-	"Command": "--reset-cursor",
-	"Args": "",
-	"Description": "reset cursor style"
+    "Command": "--reset-cursor",
+    "Args": "",
+    "Description": "reset cursor style"
 }

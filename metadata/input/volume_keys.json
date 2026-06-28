@@ -1,5 +1,5 @@
 {
-	"Command": "--volume-keys",
-	"Args": "<value>",
-	"Description": "configure volume key behavior"
+    "Command": "--volume-keys",
+    "Args": "<value>",
+    "Description": "configure volume key behavior"
 }

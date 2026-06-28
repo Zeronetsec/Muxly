@@ -1,5 +1,5 @@
 {
-	"Command": "--shortcut-previous-session",
-	"Args": "<value>",
-	"Description": "set previous session shortcut"
+    "Command": "--shortcut-previous-session",
+    "Args": "<value>",
+    "Description": "set previous session shortcut"
 }

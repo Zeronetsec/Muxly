@@ -1,5 +1,5 @@
 {
-	"Command": "--shortcut-next-session",
-	"Args": "<value>",
-	"Description": "set next session shortcut"
+    "Command": "--shortcut-next-session",
+    "Args": "<value>",
+    "Description": "set next session shortcut"
 }

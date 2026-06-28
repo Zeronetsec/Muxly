@@ -1,5 +1,5 @@
 {
-	"Command": "--chcursor-blink-rate",
-	"Args": "<0-2000>",
-	"Description": "set cursor blink rate"
+    "Command": "--chcursor-blink-rate",
+    "Args": "<0-2000>",
+    "Description": "set cursor blink rate"
 }

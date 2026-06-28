@@ -1,5 +1,5 @@
 {
-	"Command": "--shortcut-create-session",
-	"Args": "<value>",
-	"Description": "set create session shortcut"
+    "Command": "--shortcut-create-session",
+    "Args": "<value>",
+    "Description": "set create session shortcut"
 }

@@ -1,5 +1,5 @@
 {
-	"Command": "--list-themes",
-	"Args": "",
-	"Description": "show available themes"
+    "Command": "--list-themes",
+    "Args": "",
+    "Description": "show available themes"
 }

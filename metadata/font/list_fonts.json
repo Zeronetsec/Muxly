@@ -1,5 +1,5 @@
 {
-	"Command": "--list-fonts",
-	"Args": "",
-	"Description": "show available fonts"
+    "Command": "--list-fonts",
+    "Args": "",
+    "Description": "show available fonts"
 }

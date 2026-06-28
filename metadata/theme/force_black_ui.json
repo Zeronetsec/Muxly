@@ -1,5 +1,5 @@
 {
-	"Command": "--force-black-ui",
-	"Args": "<true|false>",
-	"Description": "force black ui mode"
+    "Command": "--force-black-ui",
+    "Args": "<true|false>",
+    "Description": "force black ui mode"
 }

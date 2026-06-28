@@ -1,5 +1,5 @@
 {
-	"Command": "--shortcut-rename-session",
-	"Args": "<value>",
-	"Description": "set rename session shortcut"
+    "Command": "--shortcut-rename-session",
+    "Args": "<value>",
+    "Description": "set rename session shortcut"
 }

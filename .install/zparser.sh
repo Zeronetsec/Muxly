@@ -11,14 +11,14 @@ function install::zparser() {
         set +o errexit
         install::zinstall "${p1}"
         local status=${?}
-        set -o errexit  
+        set -o errexit
 
         if [[ ${status} -eq 0 ]]; then
             return 0
         fi
 
         local clean="${fallback_raw//[\{\}]/}"
-        local IFS=',' 
+        local IFS=','
         read -ra package_fallback <<< "${clean}"
 
         for pkg in "${package_fallback[@]}"; do

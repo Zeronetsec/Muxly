@@ -1,5 +1,5 @@
 {
-	"Command": "--reset-rootfs",
-	"Args": "<distro>",
-	"Description": "reset a root filesystem"
+    "Command": "--reset-rootfs",
+    "Args": "<distro>",
+    "Description": "reset a root filesystem"
 }

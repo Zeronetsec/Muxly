@@ -1,5 +1,5 @@
 {
-	"Command": "--transcript-rows",
-	"Args": "<1-50000>",
-	"Description": "set scrollback lines"
+    "Command": "--transcript-rows",
+    "Args": "<1-50000>",
+    "Description": "set scrollback lines"
 }

@@ -1,5 +1,5 @@
 {
-	"Command": "--list-rootfs",
-	"Args": "",
-	"Description": "show available rootfs options"
+    "Command": "--list-rootfs",
+    "Args": "",
+    "Description": "show available rootfs options"
 }

@@ -1,5 +1,5 @@
 {
-	"Command": "--help",
-	"Args": "",
-	"Description": "show help"
+    "Command": "--help",
+    "Args": "",
+    "Description": "display the help menu and usage instructions"
 }

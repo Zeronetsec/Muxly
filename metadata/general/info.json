@@ -1,5 +1,5 @@
 {
-	"Command": "--info",
-	"Args": "",
-	"Description": "show muxly configurations"
+    "Command": "--info",
+    "Args": "",
+    "Description": "show muxly configurations"
 }

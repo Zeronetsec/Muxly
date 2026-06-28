@@ -1,5 +1,5 @@
 {
-	"Command": "--reset-font",
-	"Args": "",
-	"Description": "reset font to default"
+    "Command": "--reset-font",
+    "Args": "",
+    "Description": "reset font to default"
 }

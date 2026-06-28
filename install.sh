@@ -26,18 +26,19 @@ source "${root}/.install/include.sh"
 include : '(
     .install/color
     .install/variable
-    .install/error
     .install/varlock
+    .install/checker
+    .install/error
+    .install/getinstall
+    .install/inpackages
+    .install/installer
+    .install/prepdir
     .install/zinstall
     .install/zparser
-    .install/inpackages
-    .install/prepdir
-    .install/getinstall
-    .install/installer
-    .install/checker
+    .install/fnclock
     .install/extern/android_check
     .install/extern/pip_inpackages
-    .install/fnclock
+    .install/extern/xfnclock
 )'
 
 __BACKUP__=false
