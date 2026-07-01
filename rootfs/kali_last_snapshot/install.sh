@@ -4,16 +4,11 @@
 set -o errexit
 
 distro="kali_last_snapshot"
-base="debian"
+install="debian:latest"
 fullpath="${rfspath}/${distro}/rootfs/rootfs.sh"
 
-if [[ -d "${rfspath}/${base}" ]]; then
-    command pd530 remove "${base}"
-fi
-
-command pd530 install "${base}"
-command pd530 rename "${base}" "${distro}"
-
+echo -e "${B}Installing: ${GG}${install} ${N}as ${GG}${distro}"
+command pd530 install "${install}" --name "${distro}"
 if [[ -f "${fullpath}" ]]; then
     command rm -fv "${fullpath}"
 fi
