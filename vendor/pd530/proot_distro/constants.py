@@ -26,16 +26,16 @@
 
 import os
 import platform
-from importlib.metadata import version, PackageNotFoundError
+#from importlib.metadata import version, PackageNotFoundError
 
-PROGRAM_AUTHOR = "Termux (@sylirre)"
-PROGRAM_NAME = "proot-distro"
+PROGRAM_AUTHOR = "Termux (@sylirre) & Vendored by (https://github.com/Zeronetsec/Muxly)"
+PROGRAM_NAME = "pd530"
 CANONICAL_PROGRAM_NAME = "PRoot-Distro"
 
-try:
-    PROGRAM_VERSION = version(PROGRAM_NAME)
-except PackageNotFoundError:
-    PROGRAM_VERSION = "rolling"
+#try:
+PROGRAM_VERSION = "v5.3.0"
+#except PackageNotFoundError:
+#    PROGRAM_VERSION = "rolling"
 
 os.umask(0o022)
 
