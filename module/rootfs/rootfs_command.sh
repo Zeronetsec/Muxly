@@ -18,6 +18,6 @@ function module::rootfs::RootfsCommand() {
 
     command pd530 login "${1}" -- "${2}"
     return ${?}
-}
+}; readonly -f module::rootfs::RootfsCommand
 
 # Copyright (c) 2026 Zeronetsec

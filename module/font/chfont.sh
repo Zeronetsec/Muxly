@@ -25,6 +25,6 @@ function module::font::Chfont() {
 
     echo -e "${B}[*] ${N}Change font style: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::font::Chfont
 
 # Copyright (c) 2026 Zeronetsec

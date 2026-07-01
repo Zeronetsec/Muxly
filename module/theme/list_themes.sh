@@ -17,6 +17,6 @@ function module::theme::ListThemes() {
     done
 
     return 0
-}
+}; readonly -f module::theme::ListThemes
 
 # Copyright (c) 2026 Zeronetsec

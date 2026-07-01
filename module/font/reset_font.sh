@@ -13,6 +13,6 @@ function module::font::ResetFont() {
 
     echo -e "${B}[*] ${N}Resetting font style"
     return 0
-}
+}; readonly -f module::font::ResetFont
 
 # Copyright (c) 2026 Zeronetsec

@@ -1,6 +1,6 @@
 bash
-python3
 coreutils
+python3
 zip
 gawk::awk
 grep

@@ -12,6 +12,6 @@ function module::general::Version() {
     echo -e "${N}Homepage: ${GG}${homepage}${N}"
 
     return 0
-}
+}; readonly -f module::general::Version
 
 # Copyright (c) 2026 Zeronetsec

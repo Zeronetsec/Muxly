@@ -18,6 +18,6 @@ function module::rootfs::RemoveRootfs() {
 
     command pd530 remove "${1}"
     return ${?}
-}
+}; readonly -f module::rootfs::RemoveRootfs
 
 # Copyright (c) 2026 Zeronetsec

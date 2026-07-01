@@ -8,4 +8,4 @@ function install::checker() {
         echo -e "${R}[!] ${N}Failed installing ${name}!"
         return 1
     fi
-}
+}; readonly -f install::checker

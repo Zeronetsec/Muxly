@@ -7,6 +7,6 @@ function utils::birthday() {
         echo -e "${R}› ${N}Happy birthday for ${GG}muxly ${N}🎉"
         printf '\n'
     fi
-}
+}; readonly -f utils::birthday
 
 # Copyright (c) 2026 Zeronetsec

@@ -37,8 +37,6 @@ function include() {
     done <<< "${input_data}"
 
     return 0
-}
-
-readonly -f include
+}; readonly -f include
 
 # Copyright (c) 2026 Zeronetsec

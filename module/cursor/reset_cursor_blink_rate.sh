@@ -23,6 +23,6 @@ function module::cursor::ResetCursorBlinkRate() {
 
     echo -e "${B}[*] ${N}Resetting cursor blink rate"
     return 0
-}
+}; readonly -f module::cursor::ResetCursorBlinkRate
 
 # Copyright (c) 2026 Zeronetsec

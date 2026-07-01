@@ -39,6 +39,6 @@ function module::cursor::Chcursor() {
 
     echo -e "${B}[*] ${N}Change cursor style: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::cursor::Chcursor
 
 # Copyright (c) 2026 Zeronetsec

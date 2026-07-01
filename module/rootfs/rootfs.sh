@@ -17,6 +17,6 @@ function module::rootfs::Rootfs() {
     fi
 
     exec pd530 login "${1}"
-}
+}; readonly -f module::rootfs::Rootfs
 
 # Copyright (c) 2026 Zeronetsec

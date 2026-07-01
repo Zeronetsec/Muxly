@@ -17,6 +17,6 @@ function module::rootfs::ListRootfs() {
     done
 
     return 0
-}
+}; readonly -f module::rootfs::ListRootfs
 
 # Copyright (c) 2026 Zeronetsec

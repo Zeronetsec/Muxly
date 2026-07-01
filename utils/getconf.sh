@@ -12,6 +12,6 @@ function utils::getconf() {
         print p
     }'
     return 0
-}
+}; readonly -f utils::getconf
 
 # Copyright (c) 2026 Zeronetsec

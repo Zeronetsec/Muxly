@@ -28,6 +28,6 @@ function module::shortcut::ShortcutCreateSession() {
 
     echo -e "${B}[*] ${N}Change shortcut create session: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::shortcut::ShortcutCreateSession
 
 # Copyright (c) 2026 Zeronetsecg

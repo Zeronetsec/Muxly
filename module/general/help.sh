@@ -7,6 +7,7 @@ function module::general::Help() {
     if [[ -f "${engine}" ]]; then
         utils::banner
         utils::birthday
+
         echo -e "${N}Usage: ${GG}muxly ${CC}<option> [<args>]${N}"
         printf '\n'
 
@@ -22,6 +23,6 @@ function module::general::Help() {
     fi
 
     return 0
-}
+}; readonly -f module::general::Help
 
 # Copyright (c) 2026 Zeronetsec

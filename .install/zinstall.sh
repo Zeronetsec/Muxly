@@ -49,4 +49,4 @@ function install::zinstall() {
         echo -e "${R}[!] ${N}Unknown package manager!"
         return 1
     fi
-}
+}; readonly -f install::zinstall

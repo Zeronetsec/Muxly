@@ -6,6 +6,6 @@ function utils::banner() {
     command cat "${banner}"
     echo -ne "${N}"
     printf '\n'
-}
+}; readonly -f utils::banner
 
 # Copyright (c) 2026 Zeronetsec

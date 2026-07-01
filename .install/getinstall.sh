@@ -7,4 +7,4 @@ function install::getinstall() {
 
     local status=${?}
     echo -e " ${DG}- ${N}exit: ${GG}${status}${N}"
-}
+}; readonly -f install::getinstall

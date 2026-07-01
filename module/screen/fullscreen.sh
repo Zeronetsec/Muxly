@@ -34,6 +34,6 @@ function module::screen::Fullscreen() {
     echo -e "${B}[*] ${N}Change fullscreen mode: ${GG}${1}${N}"
     echo -e "${B}[*] ${N}Please reload your termux"
     return 0
-}
+}; readonly -f module::screen::Fullscreen
 
 # Copyright (c) 2026 Zeronetsec

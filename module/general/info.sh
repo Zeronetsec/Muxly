@@ -35,6 +35,6 @@ function module::general::Info() {
     echo -e "${WW}Installed rootfs: ${GG}${rootfs_installed}${N}"
 
     return 0
-}
+}; readonly -f module::general::Info
 
 # Copyright (c) 2026 Zeronetsec

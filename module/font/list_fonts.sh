@@ -17,6 +17,6 @@ function module::font::ListFonts() {
     done
 
     return 0
-}
+}; readonly -f module::font::ListFonts
 
 # Copyright (c) 2026 Zeronetsec

@@ -70,6 +70,6 @@ function module::shortcut::ResetShortcuts() {
     utils::setconf "shortcut-rename-session" "default"
     echo -e "${B}[*] ${N}Resetting shortcut rename session"
     return 0
-}
+}; readonly -f module::shortcut::ResetShortcuts
 
 # Copyright (c) 2026 Zeronetsec

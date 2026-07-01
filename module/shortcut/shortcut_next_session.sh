@@ -28,6 +28,6 @@ function module::shortcut::ShortcutNextSession() {
 
     echo -e "${B}[*] ${N}Change shortcut next session: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::shortcut::ShortcutNextSession
 
 # Copyright (c) 2026 Zeronetsec

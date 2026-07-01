@@ -10,4 +10,4 @@ function install::prepdir() {
     if [[ ! -d "${bin}" ]]; then
         command mkdir -p "${bin}"
     fi
-}
+}; readonly -f install::prepdir

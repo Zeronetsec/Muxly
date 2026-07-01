@@ -33,6 +33,6 @@ function module::screen::DisableSessionToast() {
 
     echo -e "${B}[*] ${N}Change session toast: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::screen::DisableSessionToast
 
 # Copyright (c) 2026 Zeronetsec

@@ -34,6 +34,6 @@ function module::screen::TranscriptRows() {
 
     echo -e "${B}[*] ${N}Change transcript rows: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::screen::TranscriptRows
 
 # Copyright (c) 2026 Zeronetsec

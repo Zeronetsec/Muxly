@@ -24,6 +24,6 @@ function module::general::Uwu() {
     done
 
     return 0
-}
+}; readonly -f module::general::Uwu
 
 # Copyright (c) 2026 Zeronetsec

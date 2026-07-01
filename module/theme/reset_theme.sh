@@ -13,6 +13,6 @@ function module::theme::ResetTheme() {
 
     echo -e "${B}[*] ${N}Resetting theme style"
     return 0
-}
+}; readonly -f module::theme::ResetTheme
 
 # Copyright (c) 2026 Zeronetsec

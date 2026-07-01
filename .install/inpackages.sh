@@ -9,4 +9,4 @@ function install::inpackages() {
         echo -e "${B}[*] ${N}Installing: ${GG}${line}${N}"
         install::zparser "${line}"
     done
-}
+}; readonly -f install::inpackages

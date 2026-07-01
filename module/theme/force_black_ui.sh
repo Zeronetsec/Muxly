@@ -33,6 +33,6 @@ function module::theme::ForceBlackUI() {
 
     echo -e "${B}[*] ${N}Change force black ui: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::theme::ForceBlackUI
 
 # Copyright (c) 2026 Zeronetsec

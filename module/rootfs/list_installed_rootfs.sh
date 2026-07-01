@@ -21,6 +21,6 @@ function module::rootfs::ListInstalledRootfs() {
     done
 
     return 0
-}
+}; readonly -f module::rootfs::ListInstalledRootfs
 
 # Copyright (c) 2026 Zeronetsec

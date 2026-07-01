@@ -23,6 +23,6 @@ function module::screen::ResetTranscriptRows() {
 
     echo -e "${B}[*] ${N}Resetting transcript rows"
     return 0
-}
+}; readonly -f module::screen::ResetTranscriptRows
 
 # Copyright (c) 2026 Zeronetsec

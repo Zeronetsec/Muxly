@@ -29,6 +29,6 @@ function module::rootfs::InstallRootfs() {
 
     command bash "${rootfs}/${1}/install.sh"
     return ${?}
-}
+}; readonly -f module::rootfs::InstallRootfs
 
 # Copyright (c) 2026 Zeronetsec

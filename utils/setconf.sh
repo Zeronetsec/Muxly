@@ -16,6 +16,6 @@ function utils::setconf() {
 
     command rm -f "${cfgtmp}"
     return 0
-}
+}; readonly -f utils::setconf
 
 # Copyright (c) 2026 Zeronetsec

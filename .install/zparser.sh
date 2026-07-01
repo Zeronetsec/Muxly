@@ -37,4 +37,4 @@ function install::zparser() {
     else
         install::zinstall "${input}"
     fi
-}
+}; readonly -f install::zparser

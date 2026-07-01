@@ -24,6 +24,6 @@ function module::cursor::ResetCursor() {
 
     echo -e "${B}[*] ${N}Resetting cursor style"
     return 0
-}
+}; readonly -f module::cursor::ResetCursor
 
 # Copyright (c) 2026 Zeronetsec

@@ -34,6 +34,6 @@ function module::screen::FullscreenWorkaround() {
     echo -e "${B}[*] ${N}Change fullscreen workaround: ${GG}${1}${N}"
     echo -e "${B}[*] ${N}This may not take effect if ${GG}fullscreen ${N}is ${GG}false${N}"
     return 0
-}
+}; readonly -f module::screen::FullscreenWorkaround
 
 # Copyright (c) 2026 Zeronetsec

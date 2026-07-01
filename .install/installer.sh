@@ -110,4 +110,4 @@ function install::installer() {
     install::getinstall \
         "command chmod +x ${bin}/pd530" \
         "Set permission for: ${GG}${bin}/pd530${N}"
-}
+}; readonly -f install::installer

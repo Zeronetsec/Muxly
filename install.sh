@@ -19,14 +19,12 @@ dir="$(
     )" > /dev/null 2>&1 && pwd
 )"
 
-export root="${dir}"
-readonly root
-
+export root="${dir}"; readonly root
 source "${root}/.install/include.sh"
+
 include : '(
     .install/color
     .install/variable
-    .install/varlock
     .install/checker
     .install/error
     .install/getinstall
@@ -35,10 +33,8 @@ include : '(
     .install/prepdir
     .install/zinstall
     .install/zparser
-    .install/fnclock
     .install/extern/android_check
     .install/extern/pip_inpackages
-    .install/extern/xfnclock
 )'
 
 __BACKUP__=false

@@ -21,4 +21,4 @@ function install::extern::pipInpackages() {
         command pip install --upgrade "${line}" > /dev/null 2>&1
         __exit__ "${?}"
     done
-}
+}; readonly -f install::extern::pipInpackages

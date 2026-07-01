@@ -34,6 +34,6 @@ function module::cursor::ChcursorBlinkRate() {
 
     echo -e "${B}[*] ${N}Change cursor blink rate: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::cursor::ChcursorBlinkRate
 
 # Copyright (c) 2026 Zeronetsec

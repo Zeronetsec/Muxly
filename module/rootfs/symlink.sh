@@ -28,6 +28,6 @@ function module::rootfs::Symlink() {
 
     command chmod +x "${PREFIX}/bin/${2}"
     return 0
-}
+}; readonly -f module::rootfs::Symlink
 
 # Copyright (c) 2026 Zeronetsec

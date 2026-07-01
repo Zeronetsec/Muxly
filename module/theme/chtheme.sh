@@ -25,6 +25,6 @@ function module::theme::Chtheme() {
 
     echo -e "${B}[*] ${N}Change theme style: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::theme::Chtheme
 
 # Copyright (c) 2026 Zeronetsec

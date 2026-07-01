@@ -28,6 +28,6 @@ function module::shortcut::ShortcutRenameSession() {
 
     echo -e "${B}[*] ${N}Change shortcut rename session: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::shortcut::ShortcutRenameSession
 
 # Copyright (c) 2026 Zeronetsec

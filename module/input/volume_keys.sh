@@ -28,6 +28,6 @@ function module::input::VolumeKeys() {
 
     echo -e "${B}[*] ${N}Change volume keys: ${GG}${1}${N}"
     return 0
-}
+}; readonly -f module::input::VolumeKeys
 
 # Copyright (c) 2026 Zeronetsec

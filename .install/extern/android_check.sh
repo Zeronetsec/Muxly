@@ -43,4 +43,4 @@ function install::extern::androidCheck() {
         echo -e "${R}[!] ${N}This tool is designed exclusively for the Termux Android app."
         return 1
     }
-}
+}; readonly -f install::extern::androidCheck

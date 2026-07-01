@@ -20,14 +20,12 @@ dir="$(
     )" > /dev/null 2>&1 && pwd
 )"
 
-export root="${dir}"
-readonly root
-
+export root="${dir}"; readonly root
 source "${root}/utils/include.sh"
+
 include : '(
     utils/variable
     utils/color
-    utils/varlock
     utils/setconf
     utils/getconf
     utils/birthday
@@ -68,7 +66,6 @@ include : '(
     module/theme/reset_theme
     module/theme/force_black_ui
     module/input/volume_keys
-    utils/fnclock
 )'
 
 case "${1}" in

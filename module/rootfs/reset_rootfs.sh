@@ -18,6 +18,6 @@ function module::rootfs::ResetRootfs() {
 
     command pd530 reset "${1}"
     return ${?}
-}
+}; readonly -f module::rootfs::ResetRootfs
 
 # Copyright (c) 2026 Zeronetsec
