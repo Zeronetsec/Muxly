@@ -7,7 +7,7 @@ distro="kali_rolling"
 install="debian:latest"
 fullpath="${rfspath}/${distro}/rootfs/rootfs.sh"
 
-echo -e "${B}Installing: ${GG}${install} ${N}as ${GG}${distro}"
+echo -e "${B}[*] ${N}Installing: ${GG}${install} ${N}as ${GG}${distro}"
 command pd530 install "${install}" --name "${distro}"
 if [[ -f "${fullpath}" ]]; then
     command rm -fv "${fullpath}"
