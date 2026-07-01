@@ -16,7 +16,7 @@ function install::installer() {
     local tprop="${HOME}/.termux/termux.properties"
     local tfont="${HOME}/.termux/font.ttf"
     local tth="${HOME}/.termux/colors.properties"
-    local rfs="${prefix}/var/lib/proot-distro/containers"
+    local rfs="${prefix}/var/lib/pd530/containers"
 
     if [[ "${__BACKUP__}" == true ]]; then
         if [[ -f "${tprop}" || -L "${tprop}" ]]; then

@@ -17,7 +17,7 @@ This tool performs modifications on the following directories:
   - Shortcuts (key bindings)
   - Other configuration settings related to the appearance and usability of Termux
 
-- `/data/data/com.termux/files/usr/var/lib/proot-distro/containers/*` </br>
+- `/data/data/com.termux/files/usr/var/lib/pd530/containers/*` </br>
   Used to:
   - Install custom rootfs
   - Remove installed rootfs
@@ -31,11 +31,6 @@ Stability and compatibility are prioritized over tracking the latest upstream re
 
 The vendored binary is installed at:
 - `$PREFIX/bin/pd530`
-
-While the executable name is version-specific, all container root filesystems continue to use the standard storage location:
-- `$PREFIX/var/lib/proot-distro/containers`
-
-This allows existing rootfs data to remain compatible and centralized regardless of the custom binary name used by this project.
 
 ## Risks
 By using this tool, you acknowledge that:
