@@ -110,4 +110,8 @@ function install::installer() {
     install::getinstall \
         "command chmod +x ${bin}/pd530" \
         "Set permission for: ${GG}${bin}/pd530${N}"
+
+    install::getinstall \
+        "command termux-reload-settings" \
+        "Reload settings..."
 }; readonly -f install::installer

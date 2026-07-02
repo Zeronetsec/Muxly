@@ -28,7 +28,7 @@ import os
 import platform
 #from importlib.metadata import version, PackageNotFoundError
 
-PROGRAM_AUTHOR = "Termux (@sylirre) & Vendored by (https://github.com/Zeronetsec/Muxly)"
+PROGRAM_AUTHOR = "Termux (@sylirre) & Vendored by 'https://github.com/Zeronetsec/Muxly'"
 PROGRAM_NAME = "pd530"
 CANONICAL_PROGRAM_NAME = "PRoot-Distro"
 
