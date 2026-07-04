@@ -1,0 +1,5 @@
+{
+    "Command": "--pd530",
+    "Args": "<args...>",
+    "Description": "execute the pd530 binary and forward all provided arguments"
+}

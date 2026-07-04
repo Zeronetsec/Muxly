@@ -1,5 +1,5 @@
 {
     "Command": "--remove-rootfs",
-    "Args": "<distro>",
+    "Args": "<rootfs>",
     "Description": "remove an installed root filesystem"
 }

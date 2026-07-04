@@ -84,20 +84,16 @@ function install::installer() {
         "Moving: ${GG}${root} ${DG}-> ${GG}${opt}/muxly${N}"
 
     install::getinstall \
-        "command chmod +x ${opt}/muxly/muxly.sh" \
-        "Set permission for: ${GG}${opt}/muxly/muxly.sh${N}"
-
-    install::getinstall \
-        "command chmod +x ${opt}/muxly/utils/python/*" \
-        "Set permission for: ${GG}${opt}/muxly/utils/python/*"
+        "command chmod +x ${opt}/muxly/muxly.rb" \
+        "Set permission for: ${GG}${opt}/muxly/muxly.rb${N}"
 
     install::getinstall \
         "
             command ln -sf \
-                ${opt}/muxly/muxly.sh \
+                ${opt}/muxly/muxly.rb \
                 ${bin}/muxly
         " \
-        "Symlink: ${GG}${opt}/muxly/muxly.sh ${DG}-> ${GG}${bin}/muxly${N}"
+        "Symlink: ${GG}${opt}/muxly/muxly.rb ${DG}-> ${GG}${bin}/muxly${N}"
 
     install::getinstall \
         "

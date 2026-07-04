@@ -1,5 +1,5 @@
 {
     "Command": "--symlink",
-    "Args": "<distro> <prog>",
+    "Args": "<rootfs> <program>",
     "Description": "create a host symlink for a rootfs program"
 }

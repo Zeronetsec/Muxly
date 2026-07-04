@@ -30,7 +30,7 @@ As a result, the bundled version may not receive future updates unless there is 
 Stability and compatibility are prioritized over tracking the latest upstream releases.
 
 The vendored binary is installed at:
-- `$PREFIX/bin/pd530`
+- `/data/data/com.termux/files/usr/bin/pd530`
 
 ## Risks
 By using this tool, you acknowledge that:

@@ -1,0 +1,5 @@
+{
+    "Command": "--backup-rootfs",
+    "Args": "<rootfs> <output>",
+    "Description": "archive an installed rootfs into a backup file"
+}

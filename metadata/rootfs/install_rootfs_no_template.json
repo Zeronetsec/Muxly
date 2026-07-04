@@ -1,0 +1,5 @@
+{
+    "Command": "--install-rootfs-no-template",
+    "Args": "<rootfs> [--name <alias>]",
+    "Description": "install a raw rootfs without using a pre-configured template"
+}

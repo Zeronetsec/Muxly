@@ -1,0 +1,5 @@
+{
+    "Command": "--rename-rootfs",
+    "Args": "<rootfs> <new_name>",
+    "Description": "change the alias or name of an installed rootfs"
+}

@@ -1,5 +1,5 @@
 {
     "Command": "--rootfs",
-    "Args": "<distro>",
+    "Args": "<rootfs> [--user <user>]",
     "Description": "switch root filesystem"
 }

@@ -1,0 +1,5 @@
+{
+    "Command": "--restore-rootfs",
+    "Args": "<tarball>",
+    "Description": "restore a rootfs from a previously backed-up tarball archive"
+}

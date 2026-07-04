@@ -1,7 +1,4 @@
 bash
-coreutils
+ruby
 python3
 zip
-gawk::awk
-grep
-sed
