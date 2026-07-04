@@ -17,7 +17,7 @@ module Chtheme
                 exit(1)
         end
 
-        root_path = File.expand_path('..', __dir__)
+        root_path = File.expand_path('../../', __dir__)
         theme_source = File.join(
             root_path, "style", "theme", theme_name,
         )
