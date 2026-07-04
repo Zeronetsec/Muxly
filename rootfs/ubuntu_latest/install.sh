@@ -7,7 +7,6 @@ distro="ubuntu_latest"
 install="ubuntu:latest"
 fullpath="${rfspath}/${distro}/rootfs/rootfs.sh"
 
-echo -e "${B}[*] ${N}Installing: ${GG}${install} ${N}as ${GG}${distro}"
 command pd530 install "${install}" --name "${distro}"
 if [[ -f "${fullpath}" ]]; then
     command rm -fv "${fullpath}"
