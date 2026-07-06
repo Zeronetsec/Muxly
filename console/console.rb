@@ -2,6 +2,7 @@
 
 require 'utils/missing_argument'
 require 'utils/invalid_option'
+require 'utils/cspace'
 
 module Console
     def self.run(args)
@@ -27,6 +28,7 @@ module Console
         ).first
 
         if target_file && File.exist?(target_file)
+            Cspace.execute()
             require target_file
             class_name = file_name.split('_').map(&:capitalize).join
             flag_class = Object.const_get(class_name)
