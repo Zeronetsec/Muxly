@@ -72,7 +72,7 @@ function install::installer() {
                     ${root}/config/config.conf \
                     ${HOME}/.config/muxly/config.conf
             " \
-            "Copying: ${GG}${path}/config/config.conf ${DG}-> ${GG}${HOME}/.config/muxly/config.conf${N}"
+            "Copying: ${GG}${root}/config/config.conf ${DG}-> ${GG}${HOME}/.config/muxly/config.conf${N}"
     fi
 
     install::getinstall \
