@@ -49,7 +49,7 @@ module ChcursorBlinkRate
         File.write(Variable.PropPath, lines.join)
         system("termux-reload-settings")
 
-        SetConf.execute("terminal-cursor-style-blink-rate", rate_str)
+        SetConf.execute("terminal-cursor-blink-rate", rate_str)
         printf(
             "%s[*] %sChange cursor blink rate: %s%s%s\n",
             Color.B, Color.N, Color.GG, rate_str, Color.N,
