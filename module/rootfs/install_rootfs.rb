@@ -56,6 +56,9 @@ module InstallRootfs
             exit(1)
         end
 
+        ENV["N"] = Color.N
+        ENV["B"] = Color.B
+        ENV["GG"] = Color.GG
         ENV["rfspath"] = Variable.RfsPath
         ENV["root"] = root_path
 
