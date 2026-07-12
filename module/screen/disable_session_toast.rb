@@ -44,7 +44,7 @@ module DisableSessionToast
         File.write(Variable.PropPath, lines.join)
         system("termux-reload-settings")
 
-        SetConf.execute("session-toast", value)
+        SetConf.execute("disable-session-toast", value)
         printf(
             "%s[*] %sChange session toast: %s%s%s\n",
             Color.B, Color.N, Color.GG, value, Color.N,
