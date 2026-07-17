@@ -1,6 +1,6 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
-<div style="display: flex; gap: 3px; justify-content: left;">
+<div style="display: flex; gap: 5px; justify-content: left;">
     <img src="https://img.shields.io/badge/Muxly-Version%200.1-blue.svg?style=square&logo=ruby&logoColor=red" />
     <img src="https://img.shields.io/badge/Supported%20OS-Android-blue.svg?style=square&logo=android" />
     <img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=square&logo=github" />
