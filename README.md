@@ -1,8 +1,8 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
-[![version](https://img.shields.io/badge/Muxly-Version%200.1-blue.svg)]()
-[![os](https://img.shields.io/badge/Supported%20OS-Android-blue.svg)]()
-[![license](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+<img src="https://img.shields.io/badge/Muxly-Version%200.1-blue.svg?style=square&logo=ruby&logoColor=red" />
+<img src="https://img.shields.io/badge/Supported%20OS-Android-blue.svg?style=square&logo=android" />
+<img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=square&logo=github" />
 
 # Muxly
 Muxly is a Swiss Army knife for Termux customization, including fonts, themes, cursor styles, shortcuts, and rootfs management.
