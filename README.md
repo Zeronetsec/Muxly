@@ -1,9 +1,9 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
 <div align="center">
-    <img src="https://img.shields.io/badge/Muxly-Version%200.1-blue.svg?style=square&logo=ruby&logoColor=red" />
-    <img src="https://img.shields.io/badge/Supported%20OS-Android-blue.svg?style=square&logo=android" />
-    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=square&logo=github" />
+    <img src="https://img.shields.io/badge/Muxly-Version%200.1-blue?style=square&logo=ruby&logoColor=red&v=1" />
+    <img src="https://img.shields.io/badge/Supported%20OS-Android-blue?style=square&logo=android&v=1" />
+    <img src="https://img.shields.io/badge/License-GPLv3-blue?style=square&logo=github&v=1" />
 </div>
 
 # Muxly
