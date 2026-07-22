@@ -16,7 +16,7 @@ bash Muxly/install.sh <option>
 - `--remove-backup`
 - └── remove all backup found.
 - `--no-remove-config`
-- └── do not remove `~/.config/muxly/config.conf`
+- └── do not remove `~/.config/muxly/config.conf`.
 
 ### Usage
 ```bash
