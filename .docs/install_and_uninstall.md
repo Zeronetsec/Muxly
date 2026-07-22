@@ -12,7 +12,7 @@ bash Muxly/install.sh <option>
 ```
 
 # Uninstallation
-`uninstall.sh` optional option:
+`uninstall.sh` optional options (can be used together):
 - `--remove-backup`
 - └── remove all backup found.
 - `--no-remove-config`
