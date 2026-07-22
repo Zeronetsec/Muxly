@@ -3,3 +3,4 @@ rootfs/** linguist-vendored
 style/** linguist-vendored
 vendor/pd530/** linguist-vendored
 install.sh linguist-vendored
+uninstall.sh linguist-vendored
