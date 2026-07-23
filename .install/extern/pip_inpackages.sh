@@ -18,7 +18,10 @@ function install::extern::pipInpackages() {
         [[ "${line}" =~ ^# ]] && continue
         echo -e "${B}[*] ${N}Installing: ${GG}${line}${N}"
         echo -ne "${DG}-> ${N}Try: ${GG}${line}${N}"
-        command pip install --upgrade "${line}" > /dev/null 2>&1
+        command pip install \
+            --upgrade \
+            --break-system-packages \
+            "${line}" > /dev/null 2>&1
         __exit__ "${?}"
     done
 }; readonly -f install::extern::pipInpackages
