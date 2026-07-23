@@ -84,10 +84,6 @@ function install::installer() {
         "Moving: ${GG}${root} ${DG}-> ${GG}${opt}/muxly${N}"
 
     install::getinstall \
-        "command chmod +x ${opt}/muxly/muxly.rb" \
-        "Set permission for: ${GG}${opt}/muxly/muxly.rb${N}"
-
-    install::getinstall \
         "
             command ln -sf \
                 ${opt}/muxly/muxly.rb \
@@ -102,10 +98,6 @@ function install::installer() {
                 ${bin}/pd530
         " \
         "Symlink: ${GG}${opt}/muxly/vendor/pd530/proot-distro.py ${DG}-> ${GG}${bin}/pd530${N}"
-
-    install::getinstall \
-        "command chmod +x ${bin}/pd530" \
-        "Set permission for: ${GG}${bin}/pd530${N}"
 
     install::getinstall \
         "command termux-reload-settings" \
