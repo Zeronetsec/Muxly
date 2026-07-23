@@ -33,9 +33,9 @@ module Help
         dirs.each_with_index do |dirp, idx|
             printf("\n") if idx > 0
 
-            section = File.basename(dirp).capitalize
+            section = File.basename(dirp)
             printf(
-                "%s%s options:\n",
+                "%sAvailable %s options:\n",
                 Color.N, section,
             )
 
