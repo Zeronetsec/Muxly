@@ -3,7 +3,9 @@
 <div align="center">
     <img src="https://img.shields.io/badge/Muxly-Version%200.1-blue?style=square&logo=ruby&logoColor=red&v=1" />
     <img src="https://img.shields.io/badge/Supported%20OS-Android-blue?style=square&logo=android&v=1" />
-    <img src="https://img.shields.io/badge/License-GPLv3-blue?style=square&logo=github&v=1" />
+    <a href="LICENSE">
+        <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=square&logo=github&v=1" />
+    </a>
 </div>
 
 # Muxly
@@ -42,8 +44,5 @@ And more commands.
 ## Credits
 This project incorporates components from third-party sources. </br>
 Please refer to [.docs/credits.md](.docs/credits.md) for full details and licensing information.
-
-## License
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3.
 
 <!-- Copyright (c) 2026 Zeronetsec -->
