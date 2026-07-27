@@ -55,10 +55,10 @@ function install::installer() {
         install::getinstall \
             "
                 command cp \
-                    ${root}/config/config.conf \
+                    ${opt}/${targetins}/config/config.conf \
                     ${HOME}/.config/${targetins}/config.conf
             " \
-            "Copying: ${GG}${root}/config/config.conf ${DG}-> ${GG}${HOME}/.config/${targetins}/config.conf${N}"
+            "Copying: ${GG}${opt}/${targetins}/config/config.conf ${DG}-> ${GG}${HOME}/.config/${targetins}/config.conf${N}"
     fi
 
     install::getinstall \
