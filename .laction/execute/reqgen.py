@@ -12,20 +12,19 @@ outvendor_file = ROOT_DIR / "vendor" / "pd530" / "requirements.txt"
 try:
     content = input_file.read_text(encoding="utf-8")
     output_file.write_text(content, encoding="utf-8")
-    print(f"[+] Generated: {output_file.name}")
+    print(f"\x1b[0;32m[+] \x1b[0mGenerated: \x1b[0;32m{output_file.name}\x1b[0m")
 
     outvendor_file.parent.mkdir(
         parents=True, exist_ok=True,
     )
 
     outvendor_file.write_text(content, encoding="utf-8")
-    print(f"[+] Generated: {outvendor_file.name}")
-    sys.exit(0)
+    print(f"\x1b[0;32m[+] \x1b[0mGenerated: \x1b[0;32m{outvendor_file.name}\x1b[0m")
 
 except FileNotFoundError:
-    print(f"[!] File not found: {input_file}")
+    print(f"\x1b[1;31m[!] \x1b[0mFile: \x1b[0;32m{input_file} \x1b[0mnot found!")
     sys.exit(1)
 
 except Exception as e:
-    print(f"[!] Error: {e}")
+    print(f"\x1b[1;31m[!] \x1b[0mError: \x1b[0;32m{e}\x1b[0m")
     sys.exit(1)
