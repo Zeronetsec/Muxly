@@ -1,7 +1,9 @@
 <!-- https://github.com/Zeronetsec/Muxly -->
 
 # Installation
-`install.sh` optional option:
+`install.sh` optional options (can be used together):
+- `--home=<path>`
+- └── override `$HOME` value.
 - `--backup`
 - └── create a backup of the existing source installation before replacing it.
 
@@ -13,6 +15,8 @@ bash Muxly/install.sh <option>
 
 # Uninstallation
 `uninstall.sh` optional options (can be used together):
+- `--home=<path>`
+- └── override `$HOME` value.
 - `--remove-backup`
 - └── remove all backup found.
 - `--no-remove-config`

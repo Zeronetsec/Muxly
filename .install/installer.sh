@@ -1,18 +1,4 @@
 function install::installer() {
-    if [[ "${__BACKUP__}" == true && -d "${opt}/muxly" ]]; then
-        (
-            cd "${opt}"
-            install::getinstall \
-                "
-                    command zip -r \
-                        muxly_${bkdate}.bak.zip \
-                        muxly
-                " \
-                "Backup: ${GG}${opt}/muxly ${DG}-> ${GG}${opt}/muxly_${bkdate}.bak.zip${N}"
-            cd
-        )
-    fi
-
     local tprop="${HOME}/.termux/termux.properties"
     local tfont="${HOME}/.termux/font.ttf"
     local tth="${HOME}/.termux/colors.properties"
@@ -56,48 +42,24 @@ function install::installer() {
             "Create directory: ${GG}${rfs}${N}"
     fi
 
-    if [[ ! -d "${HOME}/.config/muxly" ]]; then
+    if [[ ! -d "${HOME}/.config/${targetins}" ]]; then
         install::getinstall \
             "
                 command mkdir -p \
-                    ${HOME}/.config/muxly
+                    ${HOME}/.config/${targetins}
             " \
-            "Create directory: ${GG}${HOME}/.config/muxly${N}"
+            "Create directory: ${GG}${HOME}/.config/${targetins}${N}"
     fi
 
-    if [[ ! -f "${HOME}/.config/muxly/config.conf" ]]; then
+    if [[ ! -f "${HOME}/.config/${targetins}/config.conf" ]]; then
         install::getinstall \
             "
                 command cp \
                     ${root}/config/config.conf \
-                    ${HOME}/.config/muxly/config.conf
+                    ${HOME}/.config/${targetins}/config.conf
             " \
-            "Copying: ${GG}${root}/config/config.conf ${DG}-> ${GG}${HOME}/.config/muxly/config.conf${N}"
+            "Copying: ${GG}${root}/config/config.conf ${DG}-> ${GG}${HOME}/.config/${targetins}/config.conf${N}"
     fi
-
-    install::getinstall \
-        "command rm -rf ${opt}/muxly" \
-        "Removing old source..."
-
-    install::getinstall \
-        "command mv ${root} ${opt}/muxly" \
-        "Moving: ${GG}${root} ${DG}-> ${GG}${opt}/muxly${N}"
-
-    install::getinstall \
-        "
-            command ln -sf \
-                ${opt}/muxly/muxly.rb \
-                ${bin}/muxly
-        " \
-        "Symlink: ${GG}${opt}/muxly/muxly.rb ${DG}-> ${GG}${bin}/muxly${N}"
-
-    install::getinstall \
-        "
-            command ln -sf \
-                ${opt}/muxly/vendor/pd530/proot-distro.py \
-                ${bin}/pd530
-        " \
-        "Symlink: ${GG}${opt}/muxly/vendor/pd530/proot-distro.py ${DG}-> ${GG}${bin}/pd530${N}"
 
     install::getinstall \
         "command termux-reload-settings" \

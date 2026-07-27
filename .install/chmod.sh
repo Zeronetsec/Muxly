@@ -1,7 +1,10 @@
 function install::chmod() {
+    local target
+    local i
+
     target=(
         "pd530"
-        "muxly"
+        "${targetins}"
     )
 
     for i in "${target[@]}"; do
