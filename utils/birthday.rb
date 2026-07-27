@@ -9,7 +9,7 @@ module Birthday
         today = Time.now.strftime("%m-%d")
         if today == birth_date
             printf(
-                "%s› %sHappy birthday for %smuxly %s🎉\n",
+                "%s› %sHappy birthday for %sMuxly %s🎉\n",
                 Color.R, Color.N, Color.GG, Color.N,
             )
             printf("\n")
