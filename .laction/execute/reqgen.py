@@ -3,11 +3,12 @@
 import sys
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = Path(__file__).resolve().parent
+project_root = ROOT_DIR.parent.parent
 
-input_file = ROOT_DIR / ".install" / "extern" / "python_packages.txt"
-output_file = ROOT_DIR / "requirements.txt"
-outvendor_file = ROOT_DIR / "vendor" / "pd530" / "requirements.txt"
+input_file = project_root / ".install" / "extern" / "python_packages.txt"
+output_file = project_root / "requirements.txt"
+outvendor_file = project_root / "vendor" / "pd530" / "requirements.txt"
 
 try:
     content = input_file.read_text(encoding="utf-8")
