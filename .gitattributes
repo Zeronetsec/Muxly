@@ -1,6 +1,9 @@
 .install/** linguist-vendored
+.gitaction/** linguist-vendored
+
 rootfs/** linguist-vendored
 style/** linguist-vendored
-vendor/pd530/** linguist-vendored
+vendor/** linguist-vendored
+
 install.sh linguist-vendored
 uninstall.sh linguist-vendored
