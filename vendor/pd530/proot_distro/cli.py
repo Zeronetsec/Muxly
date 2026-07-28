@@ -107,9 +107,10 @@ def _refuse_nested_proot() -> None:
                     with open(f"/proc/{tracer_pid}/status") as tfh:
                         for tline in tfh:
                             if tline.startswith("Name:") and "proot" in tline:
-                                crit_error(f"{PROGRAM_NAME} should not be "
-                                           f"executed under PRoot.")
-                                sys.exit(1)
+                                print()
+                                #crit_error(f"{PROGRAM_NAME} should not be "
+                                #           f"executed under PRoot.")
+                                #sys.exit(1)
                 except OSError:
                     return
                 return
