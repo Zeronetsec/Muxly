@@ -1,0 +1,5 @@
+{
+    "Command": "--sync",
+    "Args": "",
+    "Description": "apply all current configuration values ​​to the system"
+}
