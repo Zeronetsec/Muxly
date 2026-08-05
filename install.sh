@@ -39,6 +39,7 @@ include : '(
     .install/symlink
     .install/extern/android_check
     .install/extern/pip_inpackages
+    .install/extern/privdat
 )'
 
 HOME="${HOME}"
@@ -53,6 +54,7 @@ while [[ ${#} -gt 0 ]]; do
 done
 
 install::extern::androidCheck
+install::extern::privdat
 install::inpackages
 install::extern::pipInpackages
 install::prepdir

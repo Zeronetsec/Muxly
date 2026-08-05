@@ -5,7 +5,7 @@ require 'utils/variable'
 require 'utils/setconf'
 require 'utils/missing_argument'
 
-module ForceBlackUI
+module ForceBlackUi
     def self.execute(args)
         args.shift
         value = args.first

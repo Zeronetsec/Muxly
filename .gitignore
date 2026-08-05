@@ -1,2 +1,3 @@
+.privdat/
 __pycache__/
 *.pyc

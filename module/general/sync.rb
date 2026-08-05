@@ -134,7 +134,7 @@ module Sync
                     FullscreenWorkaround.execute(["sync", val])
 
                 when "force-black-ui"
-                    ForceBlackUI.execute(["sync", val])
+                    ForceBlackUi.execute(["sync", val])
 
                 else
                     printf(
