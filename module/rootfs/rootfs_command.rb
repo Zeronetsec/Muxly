@@ -8,7 +8,7 @@ module RootfsCommand
     def self.execute(args)
         args.shift
         target_rootfs = args.at(0)
-        command_to_run = args.at(1)
+        command_to_run = args[1..-1] || []
 
         unless Dir.exist?(Variable.RfsPath)
             printf(
@@ -20,8 +20,7 @@ module RootfsCommand
 
         if target_rootfs.nil? ||
             target_rootfs.strip.empty? ||
-            command_to_run.nil? ||
-            command_to_run.strip.empty?
+            command_to_run.empty?
                 MissingArgument.execute()
                 exit(1)
         end
@@ -40,7 +39,7 @@ module RootfsCommand
 
         system(
             "pd530", "login", target_rootfs,
-            "--", command_to_run,
+            "--", *command_to_run
         )
 
         exit_code = $?.exitstatus

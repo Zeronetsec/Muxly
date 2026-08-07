@@ -76,7 +76,6 @@ module Help
     rescue JSON::ParserError, Errno::EACCES
         nil
     end
-
     private_class_method :parse_and_print_json
 end
 
