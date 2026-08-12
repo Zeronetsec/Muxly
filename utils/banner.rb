@@ -5,7 +5,8 @@ require 'utils/color'
 module Banner
     def self.execute(*)
         file_path = File.expand_path(
-            "../data/banner.txt", __dir__,
+            "../data/banner.txt",
+            __dir__,
         )
 
         if File.exist?(file_path)

@@ -8,9 +8,15 @@ module Variable
     def RfsPath = "#{ENV['PREFIX']}/var/lib/pd530/containers".freeze
     def CfgTmp = "#{ENV['PREFIX']}/tmp/muxly_config_temporary.tmp".freeze
     def Utemp = "#{ENV['PREFIX']}/tmp/muxly_utils_temporary.tmp".freeze
+
     module_function(
-        :Config, :PropPath, :FontPath, :ThPath,
-        :RfsPath, :CfgTmp, :Utemp,
+        :Config,
+        :PropPath,
+        :FontPath,
+        :ThPath,
+        :RfsPath,
+        :CfgTmp,
+        :Utemp,
     )
 end
 

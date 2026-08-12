@@ -22,9 +22,17 @@ module Console
         clean_name = input_flag.sub(/^--/, '')
         file_name = clean_name.tr('-', '_')
 
-        module_base_dir = File.expand_path("../module", __dir__)
-        target_file = Dir.glob(File.join(
-            module_base_dir, "**", "#{file_name}.rb"),
+        module_base_dir = File.expand_path(
+            "../module",
+            __dir__,
+        )
+
+        target_file = Dir.glob(
+            File.join(
+                module_base_dir,
+                "**",
+                "#{file_name}.rb",
+            ),
         ).first
 
         if target_file && File.exist?(target_file)
