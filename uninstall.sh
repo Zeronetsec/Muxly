@@ -44,7 +44,13 @@ done
 
 if [[ "${__RMBK__}" == true ]]; then
     install::getinstall \
-        "command rm -f ${opt}/${targetins}_*.zip.bak" \
+        "
+            command rm -f \
+                ${opt}/${targetins}_*.zip.bak \
+                ${HOME}/.termux/termux.properties_*.bak \
+                ${HOME}/.termux/font.ttf_*.bak \
+                ${HOME}/.termux/colors.properties_*.bak
+        " \
         "Removing all backup..."
 fi
 

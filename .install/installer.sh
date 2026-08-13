@@ -36,6 +36,21 @@ function install::installer() {
         fi
     fi
 
+    local dummyfile=(
+        "${tprop}"
+        "${tth}"
+        "${tfont}"
+    )
+
+    local itr
+    for itr in "${dummyfile[@]}"; do
+        if [[ ! -f "${itr}" || ! -L "${itr}" ]]; then
+            install::getinstall \
+                "command touch ${itr}" \
+                "Create file: ${GG}${itr}${N}"
+        fi
+    done
+
     if [[ ! -d "${rfs}" ]]; then
         install::getinstall \
             "command mkdir -p ${rfs}" \
