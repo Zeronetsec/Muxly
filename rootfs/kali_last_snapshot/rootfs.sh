@@ -8,6 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 command apt \
     -o Dpkg::Options::="--force-confdef" \
     -o Dpkg::Options::="--force-confold" \
+    -o Dpkg::Options::="--force-overwrite" \
     full-upgrade -y
 
 command apt install -y \
@@ -30,6 +31,7 @@ export DEBIAN_FRONTEND=noninteractive
 command apt \
     -o Dpkg::Options::="--force-confdef" \
     -o Dpkg::Options::="--force-confold" \
+    -o Dpkg::Options::="--force-overwrite" \
     full-upgrade \
     --allow-downgrades -y
 
@@ -59,6 +61,9 @@ alias rg='command rg --color=always'
 
 export PS1='\[\033[0m\]\n\[\033[1;34m\]┌──(\[\033[1;31m\]\u㉿\h\[\033[1;34m\])-[\[\033[0m\]\w\[\033[1;34m\]]\n\[\033[1;34m\]└──\[\033[1;31m\]\$\[\033[0m\] '
 __INJECT__
+
+command apt autoclean -y
+command apt autoremove -y
 
 exit 0
 
