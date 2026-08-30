@@ -12,7 +12,7 @@ function install::installer() {
                         ${tprop} \
                         ${tprop}_${bkdate}.bak
                 " \
-                "Backup: ${GG}${tprop} ${DG}-> ${GG}${tprop}_${bkdate}.bak${N}"
+                "Backup: ${color_GG}${tprop} ${color_DG}-> ${color_GG}${tprop}_${bkdate}.bak${color_N}"
         fi
 
         if [[ -f "${tfont}" || -L "${tfont}" ]]; then
@@ -22,7 +22,7 @@ function install::installer() {
                         ${tfont} \
                         ${tfont}_${bkdate}.bak
                 " \
-                "Backup: ${GG}${tfont} ${DG}-> ${GG}${tfont}_${bkdate}.bak${N}"
+                "Backup: ${color_GG}${tfont} ${color_DG}-> ${color_GG}${tfont}_${bkdate}.bak${color_N}"
         fi
 
         if [[ -f "${tth}" || -L "${tth}" ]]; then
@@ -32,7 +32,7 @@ function install::installer() {
                         ${tth} \
                         ${tth}_${bkdate}.bak
                 " \
-                "Backup: ${GG}${tth} ${DG}-> ${GG}${tth}_${bkdate}.bak${N}"
+                "Backup: ${color_GG}${tth} ${color_DG}-> ${color_GG}${tth}_${bkdate}.bak${color_N}"
         fi
     fi
 
@@ -47,14 +47,14 @@ function install::installer() {
         if [[ ! -f "${itr}" || ! -L "${itr}" ]]; then
             install::getinstall \
                 "command touch ${itr}" \
-                "Create file: ${GG}${itr}${N}"
+                "Create file: ${color_GG}${itr}${color_N}"
         fi
     done
 
     if [[ ! -d "${rfs}" ]]; then
         install::getinstall \
             "command mkdir -p ${rfs}" \
-            "Create directory: ${GG}${rfs}${N}"
+            "Create directory: ${color_GG}${rfs}${color_N}"
     fi
 
     if [[ ! -d "${HOME}/.config/${targetins}" ]]; then
@@ -63,7 +63,7 @@ function install::installer() {
                 command mkdir -p \
                     ${HOME}/.config/${targetins}
             " \
-            "Create directory: ${GG}${HOME}/.config/${targetins}${N}"
+            "Create directory: ${color_GG}${HOME}/.config/${targetins}${color_N}"
     fi
 
     if [[ ! -f "${HOME}/.config/${targetins}/config.conf" ]]; then
@@ -73,7 +73,7 @@ function install::installer() {
                     ${opt}/${targetins}/config/config.conf \
                     ${HOME}/.config/${targetins}/config.conf
             " \
-            "Copying: ${GG}${opt}/${targetins}/config/config.conf ${DG}-> ${GG}${HOME}/.config/${targetins}/config.conf${N}"
+            "Copying: ${color_GG}${opt}/${targetins}/config/config.conf ${color_DG}-> ${color_GG}${HOME}/.config/${targetins}/config.conf${color_N}"
     fi
 
     install::getinstall \

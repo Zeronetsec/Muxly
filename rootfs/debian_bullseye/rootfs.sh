@@ -41,6 +41,4 @@ __INJECT__
 command apt autoclean -y
 command apt autoremove -y
 
-exit 0
-
 # Copyright (c) 2026 Zeronetsec

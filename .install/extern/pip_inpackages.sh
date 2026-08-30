@@ -2,10 +2,10 @@ function install::extern::pipInpackages() {
     function __exit__() {
         local code="${1}"
         if [[ "${code}" -gt 0 ]]; then
-            echo -e " ${DG}- ${N}error: ${R}${code}${N}"
+            echo -e " ${color_DG}- ${color_N}error: ${color_R}${code}${color_N}"
             return ${code}
         fi
-        echo -e " ${DG}- ${N}exit: ${GG}${code}${N}"
+        echo -e " ${color_DG}- ${color_N}exit: ${color_GG}${code}${color_N}"
         return ${code}
     }
 
@@ -16,8 +16,8 @@ function install::extern::pipInpackages() {
     for line in "${packages[@]}"; do
         [[ -z "${line}" ]] && continue
         [[ "${line}" =~ ^# ]] && continue
-        echo -e "${B}[*] ${N}Installing: ${GG}${line}${N}"
-        echo -ne "${DG}-> ${N}Try: ${GG}${line}${N}"
+        echo -e "${color_B}[*] ${color_N}Installing: ${color_GG}${line}${color_N}"
+        echo -ne "${color_DG}-> ${color_N}Try: ${color_GG}${line}${color_N}"
         command pip install \
             --upgrade \
             --break-system-packages \

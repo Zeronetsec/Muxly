@@ -5,7 +5,7 @@ function install::symlink() {
                 ${opt}/${targetins}/vendor/pd530/proot-distro.py \
                 ${bin}/pd530
         " \
-        "Symlink: ${GG}${opt}/${targetins}/vendor/pd530/proot-distro.py ${DG}-> ${GG}${bin}/pd530${N}"
+        "Symlink: ${color_GG}${opt}/${targetins}/vendor/pd530/proot-distro.py ${color_DG}-> ${color_GG}${bin}/pd530${color_N}"
 
     install::getinstall \
         "
@@ -13,5 +13,5 @@ function install::symlink() {
                 ${opt}/${targetins}/${targetsyml} \
                 ${bin}/${targetins}
         " \
-        "Symlink: ${GG}${opt}/${targetins}/${targetsyml} ${DG}-> ${GG}${bin}/${targetins}${N}"
+        "Symlink: ${color_GG}${opt}/${targetins}/${targetsyml} ${color_DG}-> ${color_GG}${bin}/${targetins}${color_N}"
 }; readonly -f install::symlink

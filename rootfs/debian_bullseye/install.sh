@@ -20,7 +20,6 @@ command chmod -v +x "${fullpath}"
 command pd530 login "${distro}" -- bash '/rootfs.sh'
 command rm -fv "${fullpath}"
 
-echo -e "${B}[*] ${N}Rootfs: ${GG}${distro} ${N}successfully installed"
-exit 0
+echo -e "\x1b[1;34m[*] \x1b[0mRootfs: \x1b[0;32m${distro} \x1b[0msuccessfully installed"
 
 # Copyright (c) 2026 Zeronetsec
